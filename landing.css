@@ -1,0 +1,809 @@
+/* ========================================
+   ملف CSS صفحة البداية الجديد - بوابة الجامعات اليمنية
+   ======================================== */
+
+/* القسم الرئيسي الجديد */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/*تغيير لون الصفحة الرئيسة *************************************** */
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.8) 0.9px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.8) 0.9px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 10s ease-in-out infinite;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.hero-text {
+
+    color: white;/* *********************************************************************تغيير لون اكتشف جامعتك في الصفحة الرئيسية*/
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-badge i {
+    color: #fbbf24;/* تغيير لون ايقونة البوابة الرسمية************************************************************************************/
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.title-line {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.title-line.highlight {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);/*تغيير لون المثالية في الصفحة الرئيسية **********************************/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.title-line.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);/*تغيير لون الخط اسفل المثالية في الصفحة الرئيسية************************ */
+    border-radius: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+/* لون ارقام الاحصائيات*/
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fbbf24;/* تغيير لون ارقام الاحصائيات***********************************************************************************/
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+/*قسم الازرار */
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+    min-width: 180px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+/*لون الزر */
+.hero-actions .btn-primary {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);/* تغيير لون الازرار ********************************************************/
+    border: none;
+}
+
+.hero-actions .btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;/* تغيير لون النص في الزر*************************************************************************************/
+    backdrop-filter: blur(10px);
+}
+
+/* القسم البصري الجديد */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* تغيير لون الخط داخل البطاقات */
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /*ايقاف حركة البطايق الثلاث المتحركة */
+    animation: float 6s ease-in-out infinite;
+}
+/* تغيير لون الايقونات المتحركة*********************************************************************************************/
+.floating-card i {
+    font-size: 1.5rem;
+    color: #fbbf24;
+}
+
+.card-1 {
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 50%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.card-3 {
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 4s;
+}
+
+.main-illustration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.illustration-circle {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    /* تغيير لون الايقونة داخل الدائرة المتحركة********************************************************************/
+    color: #fbbf24;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+/* قسم المميزات الجديد */
+.features-section {
+    padding: 100px 0;
+    /* تغيير لون السكشن الثاني*/
+    background: var(--background-white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    /* تغيير لون البطاقات في السكشن الثاني*/
+    background: var(--background-white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    /* تغيير لون الخط الزخرفي فوق البطاقة*/
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    /* تغيير مقدار اندفاع البطاقة الى الامام*/
+    transition: transform 0.4s ease;
+}
+
+.feature-item:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    /* تغيير لون الدائرة الخاصة بالايقونات في السكشن الثاني*/
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    /* تغيير لون الايقونات نفسها*/
+    color: rgb(255, 255, 255);
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+}
+
+.feature-item:hover .feature-icon {
+    /* يحدد مدى تمدد الايقونات*/
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.feature-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* قسم الجامعات المميزة */
+.universities-section {
+    padding: 100px 0;
+    /* تغيير لون السكشن الثالث*/
+    background: var(--background-light);
+}
+
+.universities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.university-card {
+    /* تغيير لون البطاقة في السكشن الثالث*/
+    background: var(--background-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.university-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.university-header {
+    /* تغيير لون راس البطاقة في السكشن الثالث*/
+    background: var(--gradient-primary);
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* تغييير لون الايقونات داخل البطايق*/
+    color: rgb(255, 255, 255);
+}
+
+.university-logo {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.university-type {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+/* تغيير لون الحكومية او الاهلية*/
+.university-type.government {
+ background: #ff224029;
+    color: #F44336;
+}
+
+.university-type.private {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.university-content {
+    padding: 30px;
+}
+
+.university-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.university-content p {
+    /* تغيير  لون محتوى البطاقة*/
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.university-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.university-stats span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.university-stats i {
+    color: var(--primary-color);
+}
+
+.university-footer {
+    padding: 0 30px 30px;
+}
+
+/* قسم الإحصائيات الجديد */
+.stats-section {
+    padding: 100px 0;
+    background: var(--gradient-primary);
+    /* تغيير لون العنوان في السكشن الرابع*/
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 2px);
+    background-size: 30px 30px;
+}
+
+.stats-content {
+    position: relative;
+    z-index: 2;
+}
+
+.stats-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.stats-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.stats-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    /* تغيير لون ايقونات الاحصائيات*/
+    color: #fbbf24;
+}
+
+.stat-info .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    /* تغيير لون ارقام الاحصائيات في السكشن الرابع*/
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-info .stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* التأثيرات الحركية */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+.featured-universities {
+    background: var(--background-white); /* خلفية بيضاء لبطايق الجامعات*****************************************************************/
+    border-radius: 20px; /* زوايا دائرية كبيرة */
+    overflow: hidden; /* إخفاء المحتوى الزائد عن الحدود */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف حول البطاقة */
+    transition: var(--transition); /* تأثيرات انتقالية */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حدود بيضاء شفافة */
+    opacity: 1; /* مرئية كاملة */
+    transform: scale(1); /* الحجم الطبيعي */
+}
+
+/* 
+ تأثيرات التمرير على البطاقات
+الوظيفة: إضافة تفاعل عند تمرير الماوس
+*/
+.university-card:hover {
+    transform: translateY(-10px) scale(1.02); /* تحريك البطاقة لأعلى وتكبيرها قليلاً */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* ظل أكبر عند التمرير */
+}
+
+.university-card.hidden {
+    opacity: 0; /* إخفاء البطاقة */
+    transform: scale(0.8); /* تصغير الحجم */
+    pointer-events: none; /* تعطيل التفاعل مع البطاقة */
+    display: none !important; /* إخفاء تام من التخطيط */
+}
+
+/* 
+ رأس بطاقة الجامعة
+الوظيفة: عرض شعار الجامعة ونوعها
+*/
+.university-header {
+    background: var(--gradient-primary); /* خلفية متدرجة لراس بطاقة الجامعة*****************************************************************/
+    padding: 10px; /* مسافة داخلية صغيرة */
+    display: flex; /* تخطيط مرن */
+    justify-content: space-between; /* توزيع المساحة بين الشعار ونوع الجامعة */
+    align-items: center; /* محاذاة في المنتصف عمودياً */
+    color: rgb(255, 255, 255); /*لون ايقونات البطاقة*الجامعة************************************************************************************ */
+}
+
+.university-logo {
+    width: 60px; /* عرض ثابت */
+    height: 60px; /* ارتفاع ثابت */
+    background: rgba(255, 255, 255, 0.2); /* خلفية بيضاء شفافة */
+    border-radius: 12px; /* زوايا دائرية */
+    display: flex; /* تخطيط مرن */
+    align-items: center; /* محاذاة في المنتصف عمودياً */
+    justify-content: center; /* محاذاة في المنتصف أفقياً */
+    font-size: 1.5rem; /* حجم أيقونة كبير */
+}
+
+/* 
+ نوع الجامعة (حكومية/أهلية)
+الوظيفة: عرض نوع الجامعة في شارة ملونة
+*/
+.university-type {
+    padding: 6px 12px; /* مسافة داخلية */
+    border-radius: 20px; /* شكل دائري */
+    font-size: 0.8rem; /* حجم خط صغير */
+    font-weight: 600; /* نص سميك */
+    text-align: center; /* محاذاة النص في المنتصف */
+    min-width: 60px; /* أقل عرض ممكن */
+}
+
+.university-type.government {
+   background: #ff224029;
+    color: #F44336;/*لون الجامعة حكومية او اهلية************************************************************************************ */
+}
+
+.university-type.private {
+    background: rgba(245, 158, 11, 0.2); /* خلفية برتقالية شفافة */
+    color: #f59e0b; /* لون برتقالي */
+}
+.university-type.independent {
+    background: rgba(245, 158, 11, 0.2); /* خلفية برتقالية شفافة */
+    color: #51f50b; /* لون برتقالي */
+}
+/* 
+ محتوى بطاقة الجامعة
+الوظيفة: عرض المعلومات التفصيلية عن الجامعة
+*/
+.university-content {
+    padding: 30px; /* مسافة داخلية كبيرة */
+}
+
+.university-content h3 {
+    font-size: 1.5rem; /* حجم خط متوسط */
+    font-weight: 600; /* سمك خط متوسط */
+    margin-bottom: 15px; /* مسافة تحت العنوان */
+    color: var(--text-primary); /*  لون النص الرئيسي مثل اسم الجامعات**************************************************************/
+}
+
+.university-content p {
+    color: var(--text-secondary); /* لون النص الثانوي اسفل اسم الجامعات*******************************************************************/
+    margin-bottom: 20px; /* مسافة تحت الفقرة */
+    line-height: 1.6; /* مسافة مريحة بين الأسطر */
+}
+
+/* 
+ تفاصيل الجامعة
+الوظيفة: عرض معلومات الموقع والاتصال
+*/
+.university-details {
+    display: flex; /* تخطيط مرن */
+    flex-direction: column; /* ترتيب عمودي للعناصر */
+    gap: 12px; /* مسافة بين عناصر التفاصيل */
+}
+
+.detail-item {
+    display: flex; /* تخطيط مرن */
+    align-items: center; /* محاذاة في المنتصف عمودياً */
+    gap: 10px; /* مسافة بين الأيقونة والنص */
+    font-size: 0.9rem; /* حجم خط صغير */
+    color: var(--text-secondary); /* لون النص الثانوي اخر بطاقة الجامعة***************************************************************/
+}
+
+.detail-item i {
+    color: var(--primary-color); /* لون أزرق للأيقونات  الخاصة بموقع الجامعة ورقم الهاتف************************************************/
+    width: 16px; /* عرض ثابت للأيقونات */
+}
+
+/* 
+إحصائيات الجامعة
+الوظيفة: عرض أرقام عن الكليات والتخصصات
+*/
+.university-stats {
+    display: flex; /* تخطيط مرن */
+    gap: 20px; /* مسافة بين الإحصائيات */
+    margin: 15px 0; /* مسافة فوق وتحت */
+    flex-wrap: wrap; /* السماح بنقل الإحصائيات لسطر جديد */
+}
+
+.university-stat {
+    display: flex; /* تخطيط مرن */
+    align-items: center; /* محاذاة في المنتصف عمودياً */
+    gap: 8px; /* مسافة بين الأيقونة والنص */
+    font-size: 0.9rem; /* حجم خط صغير */
+    color: var(--text-secondary); /* لون النص الثانوي اخر سطر في الايقونة*/
+}
+
+.university-stat i {
+    color: var(--primary-color); /* لون أزرق للأيقونات اخر البطاقة*/
+    width: 16px; /* عرض ثابت */
+}
+
+/* التجاوب للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-actions .btn {
+        min-width: 160px;
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .visual-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .floating-card {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .floating-card i {
+        font-size: 1.2rem;
+    }
+
+    .illustration-circle {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .universities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 30px 20px;
+    }
+
+    .stat-info .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .visual-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .floating-card {
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+
+    .illustration-circle {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+        padding: 30px 20px;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}

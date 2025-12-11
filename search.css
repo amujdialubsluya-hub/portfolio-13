@@ -1,0 +1,773 @@
+/* ========================================
+   ملف CSS صفحة البحث - بوابة الجامعات اليمنية
+   ======================================== */
+
+/* رأس الصفحة */
+.page-header {
+    background: var(--gradient-primary);/* تغيير لون السكشن الاول**************************************************************************/
+    color: white;/* تغيير لون الخط في السكشن الاول***************************************************************************************/
+    padding: 100px 0 60px;
+    position: relative;
+    overflow: hidden;
+    height: 30%;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.header-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.header-stats .stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);/*تغيير لون بطايق الاحصائيات الخاصة بالارقام في السكشن الاول********************************* */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    min-width: 100px;
+}
+
+.header-stats .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fbbf24;/*تغيير لون الارقام داخل البطايق********************************************************* */
+    margin-bottom: 5px;
+}
+
+.header-stats .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* قسم البحث */
+.search-section {
+    background: var(--background-white);/* تغيير لون خلفية السكشن الثاني***********************************************************/
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.search-input-group {
+    position: relative;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--background-white);/* تغيير لون حقل البحث*************************************************************************/
+    border: 3px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.search-input {
+    flex: 1;
+    padding: 20px 60px 20px 20px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+    background: white;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);/* تغيير لون النص داخل مربع النص عند الكتابة يبدا بالاختفى*******************************************/
+    opacity: 0.7;
+}
+
+.search-button {
+    background: var(--gradient-primary);
+    color: rgb(255, 255, 255);/* تغيير لون كلمة البحث في حقل البحث*وايقونة البحث**********************************************************/
+    border: none;
+    padding: 20px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* خيارات البحث */
+.search-options {
+    display: flex;
+    justify-content: center;
+}
+
+.search-type-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-type-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: var(--transition);
+    background: var(--background-light);/* تغيير لون البحث الشامل او البحث بالكلية او التخصص اسفل مربع البحث**************************/
+    border: 2px solid transparent;
+}
+
+.search-type-label:hover {
+    background: var(--primary-color);/* تغيير لون البحث الشامل او بالتخصص او الكلية عند وضع الموشر علية********************************/
+    color: white;
+    transform: translateY(-2px);
+}
+
+.search-type-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    position: relative;
+    transition: var(--transition);
+}
+
+.search-type-label input[type="radio"]:checked + .radio-custom {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+}
+
+.search-type-label input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;/* تغيير لون النقطة التابعة للبحث الشامل او الكليات او التخصات********************************************/
+    border-radius: 50%;
+}
+
+.radio-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* قسم النتائج */
+.results-section {
+    padding: 60px 0;
+    background: var(--background-light);
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.results-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.results-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* مجموعات النتائج */
+.results-group {
+    margin-bottom: 60px;
+}
+
+.results-group-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.results-group-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.results-group-header h3 i {
+    color: var(--primary-color);
+}
+
+/* شبكات النتائج - تم التصحيح لتتوافق مع صفحة الكليات */
+.universities-grid,
+.colleges-grid,
+.specializations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.university-card,
+.college-card,
+.specialization-card {
+    background: var(--background-white);/* تغيير لون بطاقة البحث التي تم البحث عنها************************************************/
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.university-card:hover,
+.college-card:hover,
+.specialization-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.university-header,
+.college-header,
+.specialization-header {
+    background: var(--gradient-primary);/* تغيير راس البطاقة المبحوث عنها************************************************************/
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(251, 248, 248);/* تغيير لون الايقونة داخل البطاقة*****************************************************************/
+}
+
+.university-logo,
+.college-logo,
+.specialization-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.university-type,
+.college-type,
+.specialization-type {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.university-type.government,
+.college-type.government,
+.specialization-type.government {
+    background: #09e50929;
+    color: #F44336;/* تغيير لون الكلية حكومية****************************************************************************************/
+}
+
+.university-type.private,
+.college-type.private,
+.specialization-type.private {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;/* تغيير لون الكلية الخاصة**************************************************************************************/
+}
+
+.college-type.independent {
+    background: rgba(102, 188, 232, 0.2);
+    color: #76f65c;/* تغيير لون الكلية المستقلة***********************************************************************************/
+}
+
+.college-type small {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.65rem;
+    opacity: 0.8;
+}
+
+.university-content,
+.college-content,
+.specialization-content {
+    padding: 30px;
+}
+
+.university-content h3,
+.college-content h3,
+.specialization-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);/* تغيير لون الخط الكبير داخل البطاقات مثل اسم الجامعة و التخصص******************************************/
+}
+
+.university-content p,
+.college-content p,
+.specialization-content p {
+    color: var(--text-secondary);/* تغيير لون الخط الفرعي اسفل البطاقة*****************************************************************/
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.college-university {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.university-details,
+.college-details,
+.specialization-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);/* تغيير لون الموقع في البطاقة***********************************************************************/
+}
+
+.detail-item i {
+    color: var(--primary-color);/* تغيير لون الايقونات داخل البطاقة*****************************************************************/
+    width: 16px;
+}
+
+.college-stats {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.college-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.college-stat i {
+    color: var(--primary-color);
+    width: 16px;
+}
+
+.university-footer,
+.college-footer,
+.specialization-footer {
+    padding: 0 30px 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.university-footer .btn,
+.college-footer .btn,
+.specialization-footer .btn {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* لا توجد نتائج */
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--background-white);/* تغيير لون بطاقة الرسالة عند عدم وجود نتيجة**********************************************/
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.no-results-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--background-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    color: var(--text-secondary);
+}
+
+.no-results h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.no-results-suggestions {
+    text-align: right;
+    background: var(--background-light);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.no-results-suggestions h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.no-results-suggestions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.no-results-suggestions li {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.no-results-suggestions li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+
+/* قسم البحث السريع */
+.quick-search-section {
+    padding: 80px 0;
+    background: var(--background-white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quick-search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.quick-search-item {
+    background: var(--background-light);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-search-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.quick-search-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.quick-search-item:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-search-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    color: white;
+}
+
+.quick-search-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.quick-search-item p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.quick-search-item .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* التجاوب للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .header-stats {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header-stats .stat-item {
+        min-width: 80px;
+        padding: 15px;
+    }
+
+    .header-stats .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .search-input-wrapper {
+        flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .search-input {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .search-button {
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .search-type-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-type-label {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .universities-grid,
+    .colleges-grid,
+    .specializations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .quick-search-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .results-header h2 {
+        font-size: 2rem;
+    }
+
+    .results-group-header h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .header-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-stats .stat-item {
+        min-width: auto;
+    }
+
+    .search-input {
+        font-size: 1rem;
+    }
+
+    .search-button {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+
+    .quick-search-item {
+        padding: 30px 20px;
+    }
+
+    .quick-search-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* تأثيرات إضافية */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.university-card,
+.college-card,
+.specialization-card,
+.quick-search-item {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.university-card:nth-child(1) { animation-delay: 0.1s; }
+.university-card:nth-child(2) { animation-delay: 0.2s; }
+.university-card:nth-child(3) { animation-delay: 0.3s; }
+.college-card:nth-child(1) { animation-delay: 0.1s; }
+.college-card:nth-child(2) { animation-delay: 0.2s; }
+.college-card:nth-child(3) { animation-delay: 0.3s; }
+.specialization-card:nth-child(1) { animation-delay: 0.1s; }
+.specialization-card:nth-child(2) { animation-delay: 0.2s; }
+.specialization-card:nth-child(3) { animation-delay: 0.3s; }
+.quick-search-item:nth-child(1) { animation-delay: 0.1s; }
+.quick-search-item:nth-child(2) { animation-delay: 0.2s; }
+.quick-search-item:nth-child(3) { animation-delay: 0.3s; }
+.quick-search-item:nth-child(4) { animation-delay: 0.4s; }

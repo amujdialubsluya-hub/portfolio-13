@@ -1,94 +1,143 @@
 <?php
-// تضمين ملف الإعدادات
-require_once 'config.php';
+session_start();
+require_once '../config.php';
+require_once __DIR__ . '/includes/logger.php';
 
-// معالجة معاملات الفلترة
-$college_filter = $_GET['college'] ?? '';
-$university_filter = $_GET['university'] ?? '';
-
-// بناء استعلام التخصصات مع الفلترة
-$where_conditions = ["s.status = 'متاح'"];
-
-if (!empty($college_filter)) {
-    $where_conditions[] = "c.name LIKE '%" . $conn->real_escape_string($college_filter) . "%'";
+// التحقق من تسجيل الدخول
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header('Location: login.php');
+    exit();
 }
+if ($_SESSION['admin_role'] !== 'admin') {
+    // إيقاف تحميل باقي الصفحة
+    ?>
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+        <title>غير مصرح</title>
+        <link rel="stylesheet" href="assets/css/admin.css">
+         <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Cairo", sans-serif;
+                background: linear-gradient(135deg, #1d3557, #457b9d);
+                color: #fff;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .error-page {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 40px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+                animation: fadeIn 0.8s ease-in-out;
+                max-width: 400px;
+                width: 90%;
+            }
+            .error-page h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+                color: #f1faee;
+            }
+            .error-page p {
+                font-size: 16px;
+                margin-bottom: 25px;
+                color: #dceefb;
+            }
+            .error-page a {
+                display: inline-block;
+                padding: 12px 25px;
+                background: #e63946;
+                color: #fff;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background 0.3s ease;
+            }
+            .error-page a:hover {
+                background: #d62828;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="error-page">
+            <h1>غير مصرح لك بالدخول</h1>
+            <p>ليس لديك صلاحية للوصول إلى هذه الصفحة</p>
+            <a href="dashboard.php">العودة للوحة التحكم</a>
+        </div>
+    </body>
+    </html>
+    <?php
+    exit();
+}
+// حذف تخصص
+if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
+    $id = (int)$_GET['delete'];
 
-if (!empty($university_filter)) {
-    if ($university_filter === 'مستقلة') {
-        $where_conditions[] = "c.university_id IS NULL";
+    $delete_sql = "DELETE FROM specializations WHERE id = ?";
+    $delete_stmt = $conn->prepare($delete_sql);
+    $delete_stmt->bind_param("i", $id);
+
+    if ($delete_stmt->execute()) {
+        $_SESSION['success_message'] = 'تم حذف التخصص بنجاح';
+        log_admin("Deleted specialization id=$id");
     } else {
-        $where_conditions[] = "u.type = '" . $conn->real_escape_string($university_filter) . "'";
+        $_SESSION['error_message'] = 'خطأ في حذف التخصص';
+        log_admin("Failed delete specialization id=$id");
     }
+    $delete_stmt->close();
+    header('Location: specializations.php');
+    exit();
 }
 
-$where_clause = implode(' AND ', $where_conditions);
-
-// استعلام جلب التخصصات
-$sql = "SELECT
+// جلب قائمة التخصصات مع معلومات الكلية والجامعة
+$specializations_sql = "SELECT
     s.*,
     c.name as college_name,
-    c.id as college_id,
     c.university_id,
-    c.type as college_type,
     u.name as university_name,
-    u.type as university_type,
-    u.location as university_location,
-    CASE 
-        WHEN c.university_id IS NULL THEN c.location 
-        ELSE u.location 
-    END as location
+    u.type as university_type
 FROM specializations s
 JOIN colleges c ON s.college_id = c.id
 LEFT JOIN universities u ON c.university_id = u.id
-WHERE $where_clause
-ORDER BY 
-    CASE WHEN c.university_id IS NULL THEN 1 ELSE 0 END,
-    s.name";
+ORDER BY s.name";
 
-$result = $conn->query($sql);
+$specializations_result = $conn->query($specializations_sql);
 
-// جلب إحصائيات التخصصات
+// جلب قائمة الكليات للفلتر
+$colleges_sql = "SELECT
+    c.id,
+    c.name AS college_name,
+    u.name AS university_name
+FROM colleges c
+LEFT JOIN universities u ON c.university_id = u.id
+ORDER BY u.name, c.name";
+
+$colleges_result = $conn->query($colleges_sql);
+if ($colleges_result === false || $colleges_result->num_rows === 0) {
+    log_admin('Specializations page colleges fallback query engaged');
+    $fallback_sql = "SELECT id, name AS college_name, '' AS university_name FROM colleges ORDER BY name";
+    $colleges_result = $conn->query($fallback_sql);
+}
+
+// إحصائيات التخصصات
 $stats_sql = "SELECT
     COUNT(*) as total_specializations,
-    COUNT(DISTINCT s.college_id) as total_colleges,
-    (SELECT COUNT(*) FROM universities WHERE status = 'نشطة') as total_universities
-FROM specializations s
-JOIN colleges c ON s.college_id = c.id
-WHERE s.status = 'متاح'";
+    AVG(duration) as avg_duration,
+    COUNT(DISTINCT college_id) as colleges_with_specializations,
+    COUNT(CASE WHEN degree_type = 'بكالوريوس' THEN 1 END) as bachelor_count
+FROM specializations";
 
 $stats_result = $conn->query($stats_sql);
 $stats = $stats_result->fetch_assoc();
-
-// جلب التخصصات الأكثر شعبية (محسن)
-$popular_sql = "SELECT
-    s.name,
-    COUNT(DISTINCT c.id) as college_count
-FROM specializations s
-JOIN colleges c ON s.college_id = c.id
-LEFT JOIN universities u ON c.university_id = u.id
-WHERE s.status = 'متاح'
-GROUP BY s.name
-ORDER BY college_count DESC
-LIMIT 6";
-
-$popular_result = $conn->query($popular_sql);
-
-if (!$popular_result) {
-    die("خطأ في استعلام التخصصات الشائعة: " . $conn->error);
-}
-
-// دالة للجمع بالعربية
-function getArabicCollegeCount($count) {
-    if ($count == 1) {
-        return "كلية واحدة";
-    } elseif ($count == 2) {
-        return "كليتين";
-    } elseif ($count >= 3 && $count <= 10) {
-        return "$count كليات";
-    } else {
-        return "$count كلية";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -96,546 +145,428 @@ function getArabicCollegeCount($count) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التخصصات الجامعية - بوابة الجامعات اليمنية</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/specializations.css">
+    <title>إدارة التخصصات - لوحة الإدارة</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/all.min.css">
+    
+    <style>
+        .search-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .search-icon {
+              position: absolute;
+        top: 32%;
+        transform: translateY(-50%);
+        color: #64748b;
+        left: 1rem;
+        }
+        
+        .search-hint {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+            text-align: right;
+        }
+        
+        .specializations-table tbody tr {
+            transition: all 0.3s ease;
+        }
+        
+        .specializations-table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #64748b;
+            padding: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- شريط التنقل -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="Image/1.jpg" alt="شعار الجامعات اليمنية" style="width: 90px; height: 81px;">
-                <div class="logo-text">
-                    <span class="logo-title">دليل الجامعات اليمنية</span>
-                    <span class="logo-subtitle">الالكتروني الشامل</span>
+    <div class="admin-layout">
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>لوحة الإدارة</h2>
                 </div>
+                 <p>دليل الشامل للجامعات اليمنية</p>
             </div>
 
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span>الرئيسية</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="universities.php" class="nav-link">
-                        <i class="fas fa-university"></i>
-                        <span>الجامعات</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="colleges.php" class="nav-link">
-                        <i class="fas fa-building"></i>
-                        <span>الكليات</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="specializations.php" class="nav-link active">
-                        <i class="fas fa-book"></i>
-                        <span>التخصصات</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="search.php" class="nav-link">
-                        <i class="fas fa-search"></i>
-                        <span>البحث</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.php" class="nav-link">
-                        <i class="fas fa-phone"></i>
-                        <span>اتصل بنا</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="admin/login.php" class="nav-link admin-link" title="لوحة الإدارة">
-                        <i class="fas fa-cog"></i>
-                        <span>الإدارة</span>
-                    </a>
-                </li>
-            </ul>
-
-            <button class="nav-toggle" id="navToggle" aria-label="قائمة التنقل">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- رأس الصفحة -->
-    <header class="page-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1 class="page-title">التخصصات الجامعية</h1>
-                    <p class="page-subtitle">اكتشف جميع التخصصات المتاحة في الجامعات والكليات المستقلة اليمنية</p>
-                    <?php if (!empty($college_filter) || !empty($university_filter)): ?>
-                        <div class="filter-message">
-                            <i class="fas fa-filter"></i>
-                            <span>عرض التخصصات:
-                                <?php if (!empty($college_filter)): ?>
-                                    كلية <?php echo htmlspecialchars($college_filter); ?>
-                                <?php endif; ?>
-                                <?php if (!empty($college_filter) && !empty($university_filter)): ?> و <?php endif; ?>
-                                <?php if (!empty($university_filter)): ?>
-                                    <?php 
-                                        if ($university_filter === 'حكومية') echo 'جامعات حكومية';
-                                        elseif ($university_filter === 'أهلية') echo 'جامعات أهلية';
-                                        else echo 'كليات مستقلة';
-                                    ?>
-                                <?php endif; ?>
-                            </span>
-                            <a href="specializations.php" class="clear-filter">مسح الفلتر</a>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <div class="header-stats">
-                    <div class="stat-item">
-                        <div class="stat-number"><?php echo $stats['total_universities']; ?></div>
-                        <div class="stat-label">جامعة</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number"><?php echo $stats['total_colleges']; ?></div>
-                        <div class="stat-label">كلية</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number"><?php echo $stats['total_specializations']; ?>+</div>
-                        <div class="stat-label">تخصص</div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </header>
-
-    <!-- قسم الفلترة -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-container">
-                <div class="filter-group">
-                    <label for="university-filter">نوع المؤسسة:</label>
-                    <select id="university-filter" class="filter-select">
-                        <option value="">جميع المؤسسات</option>
-                        <option value="حكومية">جامعات حكومية</option>
-                        <option value="أهلية">جامعات أهلية</option>
-                        <option value="مستقلة">كليات مستقلة</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="college-filter">الكلية:</label>
-                    <select id="college-filter" class="filter-select">
-                        <option value="">جميع الكليات</option>
-                        <option value="الهندسة">كلية الهندسة</option>
-                        <option value="الطب">كلية الطب</option>
-                        <option value="العلوم">كلية العلوم</option>
-                        <option value="التجارة">كلية التجارة</option>
-                        <option value="الزراعة">كلية الزراعة</option>
-                        <option value="الاعلام والاتصال">كليةالاعلام والاتصال</option>
-                        <option value="التربية">كلية التربية</option>
-                        <option value="الثروات النفطية والموارد الطبيعية">كلية الثروات النفطية والموارد الطبيعية</option>
-                        <option value="الصيدلة">كلية الصيدلة</option>
-                        <option value="الطب البيطري">كلية الطب البيطري</option>
-                        <option value="الشريعة والقانون">كلية الشريعة والقانون</option>
-                        <option value="اللغات">كلية اللغات</option>
-                        <option value="طب الاسنان">كلية طب الاسنان</option>
-                        <option value="الحاسوب وتكنولوجيا المعلومات">كلية الحاسوب وتكنولوجيا المعلومات</option>
-                        <option value="الادارة">كلية الادارة</option>
-                        <option value="الاداب">كلية الاداب</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="search-input">البحث:</label>
-                    <input type="text" id="search-input" class="filter-input" placeholder="ابحث عن تخصص...">
-                </div>
-
-                <button id="clear-filters" class="btn btn-outline">
-                    <i class="fas fa-times"></i>
-                    إعادة الضبط
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم التخصصات -->
-    <section class="specializations-section">
-        <div class="container">
-            <div class="specializations-grid" id="specializations-grid">
-                <?php if ($result->num_rows > 0): ?>
-                    <?php while($specialization = $result->fetch_assoc()): ?>
-                        <?php
-                        // تحديد نوع الكلية للعرض
-                        if ($specialization['university_id']) {
-                            $type_class = $specialization['university_type'] == 'حكومية' ? 'government' : 'private';
-                            $display_text = $specialization['university_type'];
-                        } else {
-                            $type_class = $specialization['college_type'] == 'حكومية' ? 'government' : 'private';
-                            $display_text = $specialization['college_type'] ?: 'أهلية';
-                        }
-                        ?>
-                        
-                        <div class="specialization-card"
-                             data-university="<?php echo $specialization['university_id'] ? $specialization['university_type'] : 'مستقلة'; ?>"
-                             data-college="<?php echo htmlspecialchars($specialization['college_name']); ?>"
-                             data-name="<?php echo htmlspecialchars($specialization['name']); ?>">
-
-                            <div class="specialization-header">
-                                <div class="specialization-logo">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div class="specialization-type <?php echo $type_class; ?>">
-                                    <?php echo $display_text; ?>
-                                </div>
-                            </div>
-
-                            <div class="specialization-content">
-                                <h3><?php echo htmlspecialchars($specialization['name']); ?></h3>
-                                
-                                <?php if ($specialization['university_id']): ?>
-                                    <p class="specialization-university">
-                                        <i class="fas fa-university"></i>
-                                        تابعة ل: <?php echo htmlspecialchars($specialization['university_name']); ?>
-                                    </p>
-                                <?php else: ?>
-                                    <p class="specialization-university">
-                                        <i class="fas fa-school"></i>
-                                        كلية مستقلة
-                                    </p>
-                                <?php endif; ?>
-                                
-                                <div class="description-section">
-                                    <p class="description-text">
-                                    <?php 
-                                        $desc = trim($specialization['description'] ?? '');
-                                        if (empty($desc)) {
-                                            echo '<span class="no-description">لا يوجد وصف متاح</span>';
-                                        } else {
-                                            if (function_exists('mb_substr')) {
-                                                $short = mb_substr($desc, 0, 40, 'UTF-8');
-                                                if (mb_strlen($desc, 'UTF-8') > 40) $short .= '...';
-                                            } else {
-                                                $short = substr($desc, 0, 40) . (strlen($desc) >40 ? '...' : '');
-                                            }
-                                            echo htmlspecialchars($short);
-                                        }
-                                    ?>
-                                    </p>
-                                </div>
-
-                                <div class="specialization-details">
-                                    <div class="detail-item">
-                                        <i class="fas fa-building"></i>
-                                        <span><?php echo htmlspecialchars($specialization['college_name']); ?></span>
-                                    </div>
-                                    
-                                    <div class="detail-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span><?php echo (int)$specialization['duration']; ?> سنوات</span>
-                                    </div>
-                                    
-                                    <div class="detail-item">
-                                        <i class="fas fa-certificate"></i>
-                                        <span><?php echo htmlspecialchars($specialization['degree_type']); ?></span>
-                                    </div>
-                                    
-                                    <?php if ($specialization['location']): ?>
-                                    <div class="detail-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span><?php echo htmlspecialchars($specialization['location']); ?></span>
-                                    </div>
-                                    <?php endif; ?>
-                                </div>
-
-                             
-                            </div>
-
-                            <div class="specialization-footer">
-                                <a href="specialization-details.php?id=<?php echo $specialization['id']; ?>" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>تفاصيل التخصص</span>
-                                </a>
-                                
-                                <a href="college-details.php?id=<?php echo $specialization['college_id']; ?>" class="btn btn-sm btn-outline">
-                                    <i class="fas fa-building"></i>
-                                    <span>تفاصيل الكلية</span>
-                                </a>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <div class="no-results">
-                        <i class="fas fa-search"></i>
-                        <h3>لا توجد تخصصات متاحة حالياً</h3>
-                        <p>يرجى المحاولة مرة أخرى لاحقاً</p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم التخصصات الأكثر شعبية -->
-    <section class="popular-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>التخصصات الأكثر شعبية</h2>
-                <p>التخصصات المتاحة في أكبر عدد من الكليات اليمنية</p>
-            </div>
-
-            <div class="popular-grid">
-                <?php if ($popular_result->num_rows > 0): ?>
-                    <?php while($popular = $popular_result->fetch_assoc()): ?>
-                        <div class="popular-item">
-                            <div class="popular-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="popular-content">
-                                <h4><?php echo htmlspecialchars($popular['name']); ?></h4>
-                                <p>متوفر في <?php echo getArabicCollegeCount((int)$popular['college_count']); ?></p>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <div class="no-popular">
-                        <p>لا توجد بيانات كافية لتحديد التخصصات الشائعة</p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الإحصائيات -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-content">
-                <div class="stats-text">
-                    <h2>إحصائيات التخصصات</h2>
-                    <p>نظرة عامة على التخصصات المتاحة في الجامعات والكليات اليمنية</p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div class="stat-info">
-                            <div class="stat-number"><?php echo $stats['total_specializations']; ?>+</div>
-                            <div class="stat-label">تخصص</div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="stat-info">
-                            <div class="stat-number"><?php echo $stats['total_colleges']; ?></div>
-                            <div class="stat-label">كلية</div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="stat-info">
-                            <div class="stat-number"><?php echo $stats['total_universities']; ?></div>
-                            <div class="stat-label">جامعة</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- التذييل -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>بوابة الجامعات اليمنية</span>
-                    </div>
-                    <p>نحن نساعد الطلاب في العثور على الجامعة والتخصص المناسب لهم</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="universities.php">الجامعات</a></li>
-                        <li><a href="colleges.php">الكليات</a></li>
-                        <li><a href="specializations.php">التخصصات</a></li>
-                        <li><a href="search.php">البحث</a></li>
-                        <li><a href="contact.php">اتصل بنا</a></li>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">القائمة الرئيسية</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="dashboard.php" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>لوحة التحكم</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="footer-section">
-                    <h4>تواصل معنا</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> kyanalahdl19@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> 720 087 777 967+</p>
-                        <p><i class="fas fa-map-marker-alt"></i> صنعاء، اليمن</p>
+                <div class="nav-section">
+                    <div class="nav-section-title">إدارة المحتوى</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="universities.php" class="nav-link">
+                                <i class="fas fa-university"></i>
+                                <span>الجامعات</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="colleges.php" class="nav-link">
+                                <i class="fas fa-building"></i>
+                                <span>الكليات</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="specializations.php" class="nav-link active">
+                                <i class="fas fa-book"></i>
+                                <span>التخصصات</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">التواصل والدعم</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="messages.php" class="nav-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>رسائل الاتصال</span>
+                                <?php
+                                $new_messages_sql = "SELECT COUNT(*) as count FROM contact_messages WHERE status = 'جديد'";
+                                $new_messages_result = $conn->query($new_messages_sql);
+                                $new_messages = $new_messages_result->fetch_assoc();
+                                if ($new_messages['count'] > 0): ?>
+                                    <span class="badge"><?php echo $new_messages['count']; ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">إدارة النظام</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="users.php" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>المستخدمين</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- شريط العنوان -->
+            <header class="page-header">
+                <h1 class="page-title">إدارة التخصصات</h1>
+
+                <div class="user-menu">
+                    <div class="user-info">
+                        <div class="user-name"><?php echo $_SESSION['admin_full_name']; ?></div>
+                        <div class="user-role"><?php echo $_SESSION['admin_role'] === 'admin' ? 'مدير النظام' : 'محرر'; ?></div>
+                    </div>
+                    <a href="logout.php" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>تسجيل الخروج</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- رسائل النجاح/الخطأ -->
+            <?php if (isset($_SESSION['success_message'])): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span><?php echo $_SESSION['success_message']; ?></span>
+                </div>
+                <?php unset($_SESSION['success_message']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['error_message'])): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span><?php echo $_SESSION['error_message']; ?></span>
+                </div>
+                <?php unset($_SESSION['error_message']); ?>
+            <?php endif; ?>
+
+            <!-- بطاقة إضافة تخصص جديد -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">إضافة تخصص جديد</h2>
+                </div>
+
+                <form class="form-container" method="POST" action="add_specialization.php">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">اسم التخصص *</label>
+                            <input type="text" id="name" name="name" value="<?php echo isset($_SESSION['form_data']['name']) ? htmlspecialchars($_SESSION['form_data']['name']) : ''; ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="college_id">الكلية *</label>
+                            <select id="college_id" name="college_id" required>
+                                <option value="">اختر الكلية</option>
+                                <?php if ($colleges_result->num_rows > 0): ?>
+                                    <?php while ($college = $colleges_result->fetch_assoc()): ?>
+                                        <option value="<?php echo $college['id']; ?>" <?php echo (isset($_SESSION['form_data']['college_id']) && (int)$_SESSION['form_data']['college_id'] === (int)$college['id']) ? 'selected' : ''; ?> >
+                                            <?php echo htmlspecialchars($college['college_name']); ?>
+                                            <?php if (!empty($college['university_name'])): ?>
+                                                - <?php echo htmlspecialchars($college['university_name']); ?>
+                                            <?php else: ?>
+                                                (كلية مستقلة)
+                                            <?php endif; ?>
+                                        </option>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration">مدة الدراسة (سنوات) *</label>
+                        <input type="number" id="duration" name="duration" min="1" max="10" value="<?php echo isset($_SESSION['form_data']['duration']) ? (int)$_SESSION['form_data']['duration'] : 4; ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="degree_type">نوع الدرجة</label>
+                            <select id="degree_type" name="degree_type">
+                                <option value="بكالوريوس" <?php echo (isset($_SESSION['form_data']['degree_type']) && $_SESSION['form_data']['degree_type'] === 'بكالوريوس') ? 'selected' : ''; ?>>بكالوريوس</option>
+                                <option value="ماجستير" <?php echo (isset($_SESSION['form_data']['degree_type']) && $_SESSION['form_data']['degree_type'] === 'ماجستير') ? 'selected' : ''; ?>>ماجستير</option>
+                                <option value="دكتوراه" <?php echo (isset($_SESSION['form_data']['degree_type']) && $_SESSION['form_data']['degree_type'] === 'دكتوراه') ? 'selected' : ''; ?>>دكتوراه</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">وصف التخصص</label>
+                        <textarea id="description" name="description" rows="4"><?php echo isset($_SESSION['form_data']['description']) ? htmlspecialchars($_SESSION['form_data']['description']) : ''; ?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admission_requirement">شروط القبول</label>
+                        <textarea id="admission_requirement" name="admission_requirement" rows="3" ><?php echo isset($_SESSION['form_data']['admission_requirement']) ? htmlspecialchars($_SESSION['form_data']['admission_requirement']) : ''; ?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admission_prerequisites">متطلبات القبول</label>
+                        <textarea id="admission_prerequisites" name="admission_prerequisites" rows="3" ><?php echo isset($_SESSION['form_data']['admission_prerequisites']) ? htmlspecialchars($_SESSION['form_data']['admission_prerequisites']) : ''; ?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">الحالة</label>
+                        <select id="status" name="status">
+                            <option value="متاح" <?php echo (isset($_SESSION['form_data']['status']) && $_SESSION['form_data']['status'] === 'متاح') ? 'selected' : ''; ?>>متاح</option>
+                            <option value="غير متاح" <?php echo (isset($_SESSION['form_data']['status']) && $_SESSION['form_data']['status'] === 'غير متاح') ? 'selected' : ''; ?>>غير متاح</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>إضافة التخصص</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <?php if (isset($_SESSION['form_data'])) { unset($_SESSION['form_data']); } ?>
+
+            <!-- قائمة التخصصات -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">قائمة التخصصات</h2>
+                    <div class="card-actions">
+                        <span class="total-count">إجمالي التخصصات: <?php echo $specializations_result->num_rows; ?></span>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-bottom">
-                <p> دليل الجامعات اليمنية الالكترونية الشامل 2025 &copy; .</p>
-            </div>
-        </div>
-    </footer>
+                <!-- شريط البحث -->
+                <div class="search-container">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" id="specialization-search" class="search-input" placeholder="ابحث في التخصصات... (اسم التخصص، الكلية، الجامعة، نوع الدرجة، الحالة)">
+                    <div class="search-hint">
+                        ابدأ بالكتابة للبحث التلقائي في جميع حقول التخصصات
+                    </div>
+                </div>
 
-    <!-- ملف JavaScript -->
-    <script src="assets/js/main.js"></script>
+                <div class="table-container">
+                    <table class="table specializations-table">
+                        <thead>
+                            <tr>
+                                <th>اسم التخصص</th>
+                                <th>الكلية</th>
+                                <th>الجامعة</th>
+                                <th>مدة الدراسة</th>
+                                <th>نوع الدرجة</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if ($specializations_result->num_rows > 0): ?>
+                                <?php while ($specialization = $specializations_result->fetch_assoc()): ?>
+                                    <tr>
+                                        <td>
+                                            <strong><?php echo htmlspecialchars($specialization['name']); ?></strong>
+                                            <?php if ($specialization['description']): ?>
+                                                <br><small class="truncate-1"><?php echo htmlspecialchars($specialization['description']); ?></small>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td><?php echo htmlspecialchars($specialization['college_name']); ?></td>
+                                        <td>
+                                            <?php if ($specialization['university_name']): ?>
+                                                <strong><?php echo htmlspecialchars($specialization['university_name']); ?></strong>
+                                                <br><small class="type-badge type-<?php echo $specialization['university_type'] === 'حكومية' ? 'government' : 'private'; ?>">
+                                                    <?php echo $specialization['university_type']; ?>
+                                                </small>
+                                            <?php else: ?>
+                                                <span class="type-badge type-independent">كلية مستقلة</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <span class="status-badge status-active">
+                                                <?php echo $specialization['duration']; ?> سنوات
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="status-badge status-active">
+                                                <?php echo $specialization['degree_type']; ?>
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <span class="status-badge status-<?php echo $specialization['status'] === 'متاح' ? 'active' : 'inactive'; ?>">
+                                                <?php echo $specialization['status']; ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="edit_specialization.php?id=<?php echo $specialization['id']; ?>" class="btn btn-edit btn-sm" title="تعديل">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="view_specialization.php?id=<?php echo $specialization['id']; ?>" class="btn btn-view btn-sm" title="عرض">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="?delete=<?php echo $specialization['id']; ?>" class="btn btn-delete btn-sm" title="حذف"
+                                                   onclick="return confirm('هل أنت متأكد من حذف تخصص <?php echo htmlspecialchars($specialization['name']); ?>؟')">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">
+                                        <i class="fas fa-book" style="font-size: 3rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>
+                                        <p>لا توجد تخصصات مضافة حالياً</p>
+                                        <p>قم بإضافة تخصص جديد من النموذج أعلاه</p>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    
     <script>
-        // فلترة التخصصات
         document.addEventListener('DOMContentLoaded', function() {
-            const universityFilter = document.getElementById('university-filter');
-            const collegeFilter = document.getElementById('college-filter');
-            const searchInput = document.getElementById('search-input');
-            const clearFiltersBtn = document.getElementById('clear-filters');
-            const specializationCards = document.querySelectorAll('.specialization-card');
-
-            function filterSpecializations() {
-                const universityValue = universityFilter.value;
-                const collegeValue = collegeFilter.value;
-                const searchValue = searchInput.value.toLowerCase().trim();
-
+            const searchInput = document.getElementById('specialization-search');
+            const tableRows = document.querySelectorAll('.specializations-table tbody tr');
+            const totalCount = document.querySelector('.total-count');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
                 let visibleCount = 0;
-
-                specializationCards.forEach(card => {
-                    const cardUniversity = card.getAttribute('data-university');
-                    const cardCollege = card.getAttribute('data-college').toLowerCase();
-                    const cardName = card.getAttribute('data-name').toLowerCase();
-
-                    const universityMatch = !universityValue || 
-                        (universityValue === 'مستقلة' && cardUniversity === 'مستقلة') ||
-                        (universityValue !== 'مستقلة' && cardUniversity === universityValue);
+                
+                tableRows.forEach(row => {
+                    const specializationName = row.cells[0].textContent.toLowerCase();
+                    const collegeName = row.cells[1].textContent.toLowerCase();
+                    const universityName = row.cells[2].textContent.toLowerCase();
+                    const duration = row.cells[3].textContent.toLowerCase();
+                    const degreeType = row.cells[4].textContent.toLowerCase();
+                    const status = row.cells[5].textContent.toLowerCase();
                     
-                    const collegeMatch = !collegeValue || cardCollege.includes(collegeValue.toLowerCase());
-                    const searchMatch = !searchValue || cardName.includes(searchValue) || cardCollege.includes(searchValue);
-
-                    if (universityMatch && collegeMatch && searchMatch) {
-                        card.style.display = 'block';
+                    const matches = specializationName.includes(searchTerm) || 
+                                   collegeName.includes(searchTerm) || 
+                                   universityName.includes(searchTerm) ||
+                                   duration.includes(searchTerm) ||
+                                   degreeType.includes(searchTerm) ||
+                                   status.includes(searchTerm);
+                    
+                    if (matches || searchTerm === '') {
+                        row.style.display = '';
                         visibleCount++;
                     } else {
-                        card.style.display = 'none';
+                        row.style.display = 'none';
                     }
                 });
-
-                // التحقق إذا كانت هناك نتائج
-                const existingNoResults = document.querySelector('.no-results');
                 
-                if (visibleCount === 0) {
-                    if (!existingNoResults) {
-                        const grid = document.getElementById('specializations-grid');
-                        const noResultsDiv = document.createElement('div');
-                        noResultsDiv.className = 'no-results';
-                        noResultsDiv.innerHTML = `
-                            <i class="fas fa-search"></i>
-                            <h3>لا توجد تخصصات تطابق معايير البحث</h3>
-                            <p>جرب تعديل الفلاتر أو مصطلحات البحث</p>
-                        `;
-                        grid.appendChild(noResultsDiv);
-                    }
-                } else if (existingNoResults) {
-                    existingNoResults.remove();
-                }
-            }
-
-            universityFilter.addEventListener('change', filterSpecializations);
-            collegeFilter.addEventListener('change', filterSpecializations);
-            searchInput.addEventListener('input', filterSpecializations);
-
-            clearFiltersBtn.addEventListener('click', function() {
-                universityFilter.value = '';
-                collegeFilter.value = '';
-                searchInput.value = '';
-                filterSpecializations();
-            });
-
-            // إدارة القائمة المتنقلة للهواتف
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                    
-                    // منع التمرير عند فتح القائمة
-                    if (navMenu.classList.contains('active')) {
-                        document.body.style.overflow = 'hidden';
+                if (totalCount) {
+                    if (searchTerm === '') {
+                        totalCount.textContent = `إجمالي التخصصات: ${tableRows.length}`;
                     } else {
-                        document.body.style.overflow = '';
+                        totalCount.textContent = `عرض ${visibleCount} من ${tableRows.length} تخصص`;
                     }
-                });
-
-                // إغلاق القائمة عند النقر على رابط
-                const navLinks = document.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                });
-
-                // إغلاق القائمة عند النقر خارجها
-                document.addEventListener('click', function(e) {
-                    if (navMenu.classList.contains('active') && 
-                        !navMenu.contains(e.target) && 
-                        !navToggle.contains(e.target)) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.style.overflow = '';
+                }
+                
+                const noResultsRow = document.querySelector('.no-results');
+                if (visibleCount === 0 && searchTerm !== '') {
+                    if (!noResultsRow) {
+                        const tbody = document.querySelector('.specializations-table tbody');
+                        const newRow = document.createElement('tr');
+                        newRow.className = 'no-results';
+                        newRow.innerHTML = `
+                            <td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">
+                                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>
+                                <p>لا توجد نتائج بحث تطابق "${searchTerm}"</p>
+                                <p>حاول استخدام كلمات بحث أخرى</p>
+                            </td>
+                        `;
+                        tbody.appendChild(newRow);
                     }
-                });
-
-                // إغلاق القائمة عند تغيير حجم النافذة
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth > 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
+                } else if (noResultsRow) {
+                    noResultsRow.remove();
+                }
+            });
         });
-        function enhanceStats() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    statNumbers.forEach(stat => {
-        const finalNumber = parseInt(stat.textContent);
-        let currentNumber =0 ;
-       
-        const increment = finalNumber/50;
-        const timer = setInterval(() => {
-            currentNumber += increment;
-            if (currentNumber >= finalNumber) {
-                currentNumber = finalNumber;
-                clearInterval(timer);
-            }
-            stat.textContent = Math.floor(currentNumber) + '+';
-        }, 20);
-    });}
-    
-    enhanceStats();
     </script>
 </body>
 </html>

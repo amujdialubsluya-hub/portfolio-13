@@ -1,0 +1,472 @@
+/* ===================================
+   صفحة الاتصال
+   =================================== */
+
+/* رأس الصفحة */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* تغيير لون السكشن الاول ********************************/
+    color: white;/* تغيير لون النص الاساسي في السكشن الاول الخاص بالتواصل************************************************/
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb i {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.breadcrumb span {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.header-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.header-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 500px;
+}
+
+.header-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);/* تغيير الون حول ايقونة السماعة في السكشن الاول*/
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;/* تغيير لون الايقونة في التي تشبة السماعة في السكشن الاول*********************************************************/
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    padding: 3rem 0;
+    background: #f9fcf8;/* تغيير لون الخلفية في السكشن الثاني**************************************************************************/
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3b371e;/* تغيير لون معلومات التواصل وارسل لنا رسالة**************************************************************/
+    margin: 0 0 0.5rem 0;
+}
+
+.section-header p {
+    color: #648b6a;/* تغيير لون الخط الفرعي اسفل ارسل لنا رسالة ومعلومات التواصل**********************************************/
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* معلومات التواصل */
+.contact-info-section {
+    background: white;/* تغيير لون بطاقة معلومات التواصل*************************************************************************/
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8fcf9;/* تغيير لون مربع الهاتف والبريد الاكتروني والعنوان*************************************************/
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #efe2f0;/*تغيير لون اطار الهاتف والعنوان والبريد الالكتروني******************************************* */
+}
+
+.contact-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/*تغيير لون حول ايقونات الهاتف والبريد الالكتروني والعنوان*********** */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;/*تغيير لون الايقونات الخاصة العنوان والهاتف والبريد الالكتروني ************************************************ */
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;/*تغيير لون كلمة الهاتف والبريد الالكتروني والعنوان******************************************************** */
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-details p {
+    color: #8b646c;/* تغيير لون انص الفرعي اسفل الهاتف والبريد الالكتروني والعنوان***************************************/
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* وسائل التواصل الاجتماعي */
+.social-media-section {
+    background: #fcfcf8;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.social-media-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3b331e;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 1.5rem;
+}
+
+.social-link span {
+    font-size: 0.9rem;
+}
+
+.social-link.facebook {
+    background: linear-gradient(135deg, #1877f2, #0d6efd);
+}
+
+.social-link.twitter {
+    background: linear-gradient(135deg, #1da1f2, #0ea5e9);
+}
+
+.social-link.instagram {
+    background: linear-gradient(135deg, #e4405f, #f0932b);
+}
+
+.social-link.linkedin {
+    background: linear-gradient(135deg, #0077b5, #0ea5e9);
+}
+
+.social-link.youtube {
+    background: linear-gradient(135deg, #ff0000, #dc2626);
+}
+
+/* نموذج الاتصال */
+.contact-form-section {
+    background: white;/* تغيير لون بطاقة ارسل لنا رسالة****************************************************************************/
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* التنبيهات */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;/* تغيير لون رسالة النجاح بعد ملا النموذج***************************************************************/
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;/*تغيير لون رسالة الخطا بعد ملى النموذج وعمل ارسال**************************************************** */
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.alert i {
+    font-size: 1.2rem;
+}
+
+/* النموذج */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #273b1e;/* تغيير لون النص الرئيسي في نموذج ارسال الرسالة********************************************/
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;/* تغيير لون حقول ادخال الفاسم والبريد في نموذج ارسال الرسالة**********************************************/
+    color: #3b1e37;/* تغيير لون النصوص المكتوبة داخل حقل الموضوع******************************************************************/
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* تغيير لون زر ارسال رسالة************************************/
+    color: white;/* تغيير لون النص داخل زر ارسال رسالة**************************************************************************/
+}
+
+.btn-primary:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;/* تغيير لون جملة فتح في خرئط جوجل********************************************************************/
+    border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;/* تغيير لون الخط في فتح خرئط جوجل عند وضع الماوس عليها**************************************************/
+    transform: translateY(-2px);
+}
+
+/* الخريطة */
+.map-section {
+    background: white;/*  الخارجيةتغيير لون بطاقة الخريطة **************************************************************************/
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #f8fafc 0%, #e6f0e2 100%);/*  تغيير لون بطاقة الخريطة الداخلية************************ */
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #8b6464;/* تغيير لون العنوان اسفل الخريطة اليمن صنعاء************************************************************/
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    color: #667eea;/*  تغيير لون ايقونة الخريطةوايقونة فتح غفي خريطة جوجل**********************************************************************/
+    margin-bottom: 1rem;
+}
+
+.map-placeholder h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3b1e2a;/* تغيير لون جملة خريطة الموقع********************************************************************************/
+    margin: 0 0 1rem 0;
+}
+
+.map-placeholder p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .header-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    
+    .header-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 1.5rem 0;
+    }
+    
+    .header-text h1 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info-section,
+    .contact-form-section,
+    .map-section {
+        padding: 1.5rem;
+    }
+    
+    .contact-info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        align-self: center;
+    }
+} 

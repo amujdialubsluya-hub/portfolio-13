@@ -1,0 +1,761 @@
+/* ========================================
+   ملف CSS صفحة التخصصات - بوابة الجامعات اليمنية
+   ======================================== */
+
+/* رأس الصفحة */
+.page-header {
+    background: var(--gradient-primary);/* تغيير لون السكشن الاول**********************************************************************/
+    color: rgb(255, 255, 255);/* تغيير لون الخط في السكشن الاول********************************************************************/
+    padding: 50px 0 60px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; /* تعويض لشريط التنقل الثابت */
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.8) 0.9px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 215,0, 0.8) 0.9px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 10s ease-in-out infinite;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.header-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.header-stats .stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);/* تغيير لون مربع الاحصائيات في السكشن الاول****************************************************/
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    min-width: 100px;
+}
+
+.header-stats .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fbbf24;/* تغيير لون الارقام داخل بطاقة الاحصائيات في السكشن الاول***************************************************/
+    margin-bottom: 5px;
+}
+
+.header-stats .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 
+قسم الفلترة
+الوظيفة: يحتوي على خيارات التصفية والبحث للجامعات
+*/
+.filter-section {
+    background: var(--background-white); /*  خلفية بيضاء للسكشن الثاني**********************************************************/
+    padding: 40px 0; /* مسافة داخلية علوية وسفلية */
+    border-bottom: 1px solid var(--border-color); /* تغيير خط فاصل أسفل القسم ****************************************************/
+}
+
+.filter-container {
+    display: flex; /* عرض حقول الفلترة في صف */
+    gap: 20px; /* مسافة بين الحقول */
+    align-items: end; /* محاذاة من الأسفل */
+    flex-wrap: wrap; /* السماح بنقل العناصر لسطر جديد */
+}
+
+.filter-group {
+    display: flex; /* تخطيط مرن */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    gap: 8px; /* مسافة بين التسمية وحقل الإدخال */
+    min-width: 200px; /* أقل عرض لمجموعة الفلترة */
+}
+
+.filter-group label {
+    font-weight: 600; /* نص سميك للتسميات */
+    color: var(--text-primary); /* تغيير لون الخط الرئيشي في السكشن الثاني******************************************************** */
+    font-size: 0.9rem; /* حجم خط صغير */
+}
+
+.filter-select,
+.filter-input {
+    padding: 12px 16px; /* مسافة داخلية مريحة */
+    border: 2px solid var(--border-color); /* حدود بارزة */
+    border-radius: 12px; /* زوايا دائرية */
+    font-size: 1rem; /* حجم خط مقروء */
+    transition: var(--transition); /* تأثيرات انتقالية سلسة */
+    background: var(--background-white); /* تغيير لون مربعات البحث في السكشن الثاني*********************************************** */
+    font-family: 'Cairo', sans-serif; /* خط عربي */
+}
+
+.filter-select:focus,
+.filter-input:focus {
+    outline: none; /* إزالة الحدود الافتراضية */
+    border-color: var(--primary-color); /* تغيير لون الحدود عند التركيز */
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); /* ظل خفيف حول الحقل */
+}
+/* قسم التخصصات */
+.specializations-section {
+    padding: 80px 0;
+    background: var(--background-light);/* تغيير لون الخلفية في السكشن الثالث**********************************************************/
+}
+
+.specializations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.specialization-card {
+    background: var(--background-white);/*تغيير لون الخلفية الخاصة بالبطايق ******************************************************* */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.specialization-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.specialization-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    display: none !important;
+}
+
+.specialization-header {
+    background: var(--gradient-primary);/* تغيير لون راس البطاقة الخاصة بالتخصصات في السكشن الثالث***********************************/
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;/* تغيير لون الايقونات الخاصة براس البطاقة في السكشن الثالث*********************************************************/
+}
+
+.specialization-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.specialization-type {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.specialization-type.government {
+     background: #ff224029;
+    color: #F44336;/*تغيير لون نوعية الجامعة حكومية او اهلية**************************************************************** */
+}
+
+.specialization-type.private {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.specialization-content {
+    padding: 30px;
+}
+
+.specialization-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);/* تغيير لون عنوان البطاقة مثل اسم التخصص ********************************************************/
+}
+
+.specialization-content p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);/* تغيير لون النص الفرعي داخل البطاقة *************************************************************/
+    line-height: 1.6;
+}
+
+/* تفاصيل التخصص */
+.specialization-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);/* تغيير لون التفاصيل داخل بطاقة التخصص********************************************************/
+}
+
+.detail-item i {
+    color: var(--primary-color);/* تغيير لون الايقونات الفرعية داخل بطاقة التخصص***************************************************/
+    width: 16px;
+}
+
+/* شروط ومتطلبات القبول */
+.admission-section,
+.prerequisites-section {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.section-title i {
+    font-size: 0.8rem;
+}
+
+.admission-text,
+.prerequisites-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* تذييل البطاقة */
+.specialization-footer {
+    padding: 0 30px 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.specialization-footer .btn {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* قسم التخصصات الأكثر شعبية */
+.popular-section {
+    padding: 80px 0;
+    background: var(--background-white);/* تغيير لون سكشن التخصصات الاكثر شعبية في السكشن الرابع***********************************/
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: var(--gradient-primary);/* تغيير لون التتخصصات الاكثر شعبية في السكشن الرابع****************************************/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);/* تغيير لون العنوان الفرعي في التخصصات الاكثر شعبية في السكشن الرابع********************************/
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.popular-item {
+    background: var(--background-light);/* تغيير لون بطاقات التخصصات الاكثر شعبية في السكشن الرابع*/
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.popular-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.popular-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-accent);/* تغيير لون المربح حول الايقونات في التخصصات الاكثر شعبية********************************/
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);/* تغيير لون الايقونات في التخصصات الاكثر شعبية******************************************************/
+    flex-shrink: 0;
+}
+
+.popular-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);/* تغييير لون العنوان الرئيسي في بطاتقة التخصصات الاكثر شعبية*************************************/
+    margin-bottom: 5px;
+}
+
+.popular-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);/* تغيير لون العنوان الفرعي في التخصصات الاكثر شعبية********************************************/
+    margin: 0;
+}
+
+/* رسالة عدم وجود نتائج */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.no-results i {
+    font-size: 4rem;
+    color: #ccc;/* تغيير لون ايقونة البحث عند عدم وجود اي نتيجة*****************************************/
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    color: var(--text-secondary);/* تغيير لون عدم وجود نتيجة بحث */
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    color: var(--text-light);/* تغيير لون عدم وجود نتيجة بحث في النص الفرعي*/
+}
+
+/* قسم الإحصائيات */
+.stats-section {
+    padding: 80px 0;
+    background: var(--gradient-primary);/* تغيير لون السكشن الخاص بالاحصائيات بالكامل*************************************/
+    color: white;/* تغيير لون عنوان الاحصائيات في السكشن الخامس********************************************************/
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.stats-content {
+    position: relative;
+    z-index: 2;
+}
+
+.stats-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.stats-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.stats-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);/*تغيير لون بطاقة الاحصائيات في السكشن الخامس************************************** */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);/* تغيير لون بطاقة الاحصائيات قبل وضع مؤشر الفأرة عليها******************************/
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: #fbbf24;/* تغيير لون الايقونات في بطاقة الاحصائيات****************************************************************/
+}
+
+.stat-info .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);/* تغيير لون ارقام الاحصائيات ********************************************/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-info .stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* رسالة الفلتر */
+.filter-message {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-message i {
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.filter-message span {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.clear-filter {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.clear-filter:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* تأثيرات إضافية */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.specialization-card {
+    animation: fadeIn 0.6s ease-out;
+    transition: all 0.3s ease;
+}
+
+.specialization-card:nth-child(1) { animation-delay: 0.1s; }
+.specialization-card:nth-child(2) { animation-delay: 0.2s; }
+.specialization-card:nth-child(3) { animation-delay: 0.3s; }
+.specialization-card:nth-child(4) { animation-delay: 0.4s; }
+.specialization-card:nth-child(5) { animation-delay: 0.5s; }
+.specialization-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========================================
+   تحسينات التجاوب للشاشات الصغيرة
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .specializations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 80px 0 40px;
+        margin-top: 70px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .header-stats {
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .header-stats .stat-item {
+        min-width: 80px;
+        padding: 15px;
+    }
+
+    .header-stats .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .specializations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .specialization-card {
+        margin: 0 10px;
+    }
+
+    .specialization-content {
+        padding: 20px;
+    }
+
+    .specialization-footer {
+        padding: 0 20px 20px;
+        flex-direction: column;
+    }
+
+    .specialization-footer .btn {
+        width: 100%;
+    }
+
+    .popular-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .popular-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 30px 20px;
+    }
+
+    .stat-info .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .header-stats {
+        flex-direction: column;
+        gap: 15px;
+        width: 22%;
+    }
+
+    .header-stats .stat-item {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .specialization-card {
+        margin: 0 5px;
+    }
+
+    .specialization-header {
+        padding: 15px;
+    }
+
+    .specialization-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .specialization-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .filter-select,
+    .filter-input {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    #clear-filters {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* تحسينات خاصة للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+    .specializations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .specialization-card {
+        margin: 0;
+    }
+    
+    .specialization-content {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* تحسينات الأداء والوصول */
+@media (prefers-reduced-motion: reduce) {
+    .specialization-card,
+    .popular-item,
+    .stat-card {
+        animation: none;
+        transition: none;
+    }
+    
+    .page-header::before,
+    .stats-section::before {
+        animation: none;
+    }
+
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* غير مرئي */
+        transform: translateY(20px); /* مائل لأسفل */
+    }
+    to {
+        opacity: 1; /* مرئي */
+        transform: translateY(0); /* في مكانه الطبيعي */
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.university-card {
+    animation: fadeIn 0.6s ease-out; /* تأثير ظهور تدريجي */
+    transition: all 0.3s ease; /* تأثيرات انتقالية سلسة */
+}

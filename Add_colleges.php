@@ -261,13 +261,11 @@ $universities_result = $conn->query($universities_sql);
             display: flex;
             gap: 0.5rem;
             justify-content: center;
-            
         }
         
         .btn-sm {
             padding: 0.375rem 0.75rem;
             font-size: 0.875rem;
-            
         }
         
         .link {
@@ -298,7 +296,6 @@ $universities_result = $conn->query($universities_sql);
         .checkbox-disabled {
             opacity: 0.5;
             cursor: not-allowed !important;
-            
         }
         
         .checkbox-disabled-label {
@@ -351,16 +348,6 @@ $universities_result = $conn->query($universities_sql);
         
         .checkbox-field {
             margin: 15px 0;
-        }
-        .form-group input[type="file"]::file-selector-button {
-            padding: 0.5rem 1rem;
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 0.375rem;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
         }
     </style>
 
@@ -734,14 +721,14 @@ $universities_result = $conn->query($universities_sql);
                         <small class="hint">الأنواع المسموحة: JPG, PNG, WEBP, GIF. الحد الأقصى للحجم: 5MB لكل صورة.</small>
                     </div>
                     
-                      <!-- حقل كلية مميزة -->
-                    <div class="form-group">
-                        <div class="form-checkbox">
-                            <input type="checkbox" id="featured-checkbox" name="is_featured" value="1" 
-                                <?php echo ($college['is_featured'] =1) ? 'checked' : ''; ?>>
-                            <label for="featured-checkbox" id="featured-label">كلية مميزة؟</label>
+                    <!-- حقل كلية مميزة - تم تعديله ليظهر بشكل صحيح -->
+                    <div class="form-group checkbox-field">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="featured-checkbox" name="is_featured" value="1"  
+                                   <?php if(!empty($_SESSION['form_data']['is_featured'])) echo 'checked'; ?>>
+                            <label for="featured-checkbox" id="featured-label" style="display: inline; margin: 0; padding: 0; cursor: pointer;">كلية مميزة؟</label>
                         </div>
-                        <small class="hint-checkbox" id="featured-hint">
+                        <small class="hint-checkbox">
                             يمكن تفعيل هذه الخاصية فقط للكليات غير التابعة لأي جامعة
                         </small>
                     </div>

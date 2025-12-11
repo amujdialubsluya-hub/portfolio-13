@@ -1,0 +1,922 @@
+[2025-09-30 08:33:29] [::1] [Osama] Deleted university id=1 and removed images
+[2025-09-30 08:33:33] [::1] [Osama] Deleted university id=2 and removed images
+[2025-09-30 08:35:47] [::1] [Osama] Deleted university id=4 and removed images
+[2025-09-30 08:38:21] [::1] [Osama] Deleted college id=4 and removed images
+[2025-09-30 08:40:35] [::1] [Osama] Deleted college id=5 and removed images
+[2025-09-30 08:42:35] [::1] [Osama] Specializations page colleges fallback query engaged
+[2025-09-30 08:42:37] [::1] [Osama] Specializations page colleges fallback query engaged
+[2025-09-30 08:42:39] [::1] [Osama] Specializations page colleges fallback query engaged
+[2025-09-30 09:10:38] [::1] [Osama] Added specialization 'نظم معلومات' in college_id=7
+[2025-09-30 15:10:24] [::1] [Osama] Deleted university id=3 and removed images
+[2025-09-30 15:10:27] [::1] [Osama] Specializations page colleges fallback query engaged
+[2025-09-30 15:11:47] [::1] [Osama] Specializations page colleges fallback query engaged
+[2025-09-30 15:30:54] [::1] [Osama] Added specialization 'نظم معلومات' in college_id=8
+[2025-09-30 15:42:46] [::1] [Osama] Added specialization 'نظم معلومات21' in college_id=8
+[2025-09-30 16:01:28] [::1] [Osama] Deleted university id=5 and removed images
+[2025-09-30 19:00:17] [::1] [Osama] Updated specialization id=1
+[2025-10-10 17:15:52] [::1] [Osama] Deleted university id=1 and removed images
+[2025-10-12 10:22:07] [::1] [kyan] Deleted university id=4 and removed images
+[2025-10-13 08:36:28] [::1] [Osama] Deleted college id=2 and removed images
+[2025-10-13 09:38:42] [::1] [Osama] Added specialization 'هندسة مدنية' in college_id=4
+[2025-10-13 17:06:43] [::1] [kyan] Updated specialization id=6
+[2025-10-13 18:04:50] [::1] [kyan] Updated specialization id=6
+[2025-10-13 18:05:42] [::1] [kyan] Updated specialization id=9
+[2025-10-13 23:49:48] [::1] [admin] Deleted image id=3 for university id=2
+[2025-10-13 23:54:59] [::1] [admin] Deleted image id=3 for college id=3
+[2025-10-13 23:55:05] [::1] [admin] Deleted college image: C:\xampp\htdocs\UniversitiesProject\uploads\colleges\3\img_68ed723aaf61b6.90764630.jpg
+[2025-10-13 23:55:05] [::1] [admin] Deleted image id=4 for college id=3
+[2025-10-14 08:26:38] [::1] [admin] Updated college id=3: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-10-14 08:27:25] [::1] [admin] Updated college id=3: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-10-14 10:56:52] [::1] [admin] Deleted image id=1 for university id=1
+[2025-10-14 10:56:56] [::1] [admin] Deleted image id=2 for university id=1
+[2025-10-14 18:01:25] [::1] [admin] Updated specialization id=6
+[2025-10-14 18:03:54] [::1] [admin] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-14 19:59:35] [::1] [admin] Updated college id=3: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-10-15 09:22:19] [::1] [admin] Updated university id=1: جامعة صنعاء
+[2025-10-15 09:24:08] [::1] [admin] Updated university id=1: جامعة صنعاء
+[2025-10-15 09:37:30] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 09:39:04] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 09:41:21] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 09:42:09] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 11:20:10] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 11:24:37] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 11:27:40] [::1] [admin] Updated university id=3: جامعة اليمن
+[2025-10-15 11:35:43] [::1] [admin] Updated university id=3: جامعة النصر
+[2025-10-15 13:32:04] [::1] [admin] Updated university id=3: جامعة النصر
+[2025-10-16 20:38:51] [::1] [admin] Updated university id=3: جامعة النصر
+[2025-10-16 21:00:41] [::1] [admin] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-16 21:02:01] [::1] [admin] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-16 21:02:40] [::1] [admin] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-16 21:03:49] [::1] [admin] Updated university id=3: جامعة النصر
+[2025-10-18 12:30:32] [::1] [admin] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-18 21:52:36] [::1] [kyan] Updated specialization id=6
+[2025-10-18 22:13:01] [::1] [kyan] Updated specialization id=6
+[2025-10-19 10:40:14] [::1] [kyan] Updated university id=2: جامعة الاندلس
+[2025-10-19 10:44:27] [::1] [kyan] Updated university id=2: جامعة الاندلس
+[2025-10-19 10:54:16] [::1] [kyan] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-10-19 11:07:21] [::1] [kyan] Added specialization 'طب هندسة' in college_id=3
+[2025-10-19 11:47:58] [::1] [kyan] Added specialization 'هندسة مدنية' in college_id=3
+[2025-10-19 11:48:43] [::1] [kyan] Added specialization 'هندسة مدنية' in college_id=5
+[2025-11-17 13:45:12] [::1] [ali] Added specialization 'ثصاغث' in college_id=3
+[2025-11-22 07:32:33] [::1] [ali] Added college id=6: جمال
+[2025-11-22 07:35:29] [::1] [ali] Added specialization 'الناصر' in college_id=6
+[2025-11-22 08:18:00] [::1] [ali] Updated college id=6: جمال
+[2025-11-22 08:18:00] [::1] [ali] Uploaded image for college id=6: img_692163a8cb57a7.96669961.jpeg
+[2025-11-22 08:18:00] [::1] [ali] Uploaded image for college id=6: img_692163a8d99598.35371935.jpeg
+[2025-11-22 13:27:04] [::1] [ali] Added college id=7: امجد
+[2025-11-22 13:28:47] [::1] [ali] Added specialization 'اختراقات' in college_id=7
+[2025-11-22 13:33:12] [::1] [ali] Deleted college id=7 and removed images
+[2025-11-29 13:40:11] [::1] [ali] Deleted university id=6 and removed images
+[2025-11-29 13:40:19] [::1] [ali] Deleted university id=5 and removed images
+[2025-11-29 13:40:27] [::1] [ali] Deleted university id=4 and removed images
+[2025-11-29 13:46:26] [::1] [ali] Added college id=8: التيبوغرافي
+[2025-11-29 13:49:57] [::1] [ali] Added specialization 'هندسة اجهزة الذهب' in college_id=8
+[2025-11-29 14:11:16] [::1] [ali] Updated university id=12: نابلس
+[2025-11-29 14:23:12] [::1] [ali] Updated university id=12 (is_featured=0)
+[2025-11-29 14:24:24] [::1] [ali] Updated university id=12 (is_featured=0)
+[2025-11-29 14:32:36] [::1] [ali] Updated university id=12 (is_featured=0)
+[2025-11-29 14:33:09] [::1] [ali] Updated university id=12 (is_featured=0)
+[2025-11-29 16:31:40] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 16:31:41] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:04:29] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:05:16] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:05:23] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:27:28] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:40:49] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-29 17:40:54] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:38:49] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:44:00] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:49:10] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:49:16] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:52:10] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:52:16] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:54:31] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:54:39] [::1] [ali] Updated university id=14 (is_featured=0)
+[2025-11-30 06:56:17] [::1] [ali] Updated university id=13 (is_featured=0)
+[2025-11-30 07:00:33] [::1] [ali] Updated university id=13 (is_featured=0)
+[2025-11-30 07:00:46] [::1] [ali] Updated university id=13 (is_featured=0)
+[2025-11-30 07:06:23] [::1] [ali] Updated university id=16 (is_featured=0)
+[2025-11-30 07:07:01] [::1] [ali] Updated university id=1 (is_featured=1)
+[2025-11-30 07:09:26] [::1] [ali] Updated university id=16 (is_featured=1)
+[2025-11-30 07:13:20] [::1] [ali] Updated university id=17 (is_featured=1)
+[2025-11-30 07:52:09] [::1] [ali] Updated university id=17 (is_featured=1)
+[2025-11-30 07:52:23] [::1] [ali] Updated university id=17 (is_featured=1)
+[2025-11-30 07:58:03] [::1] [ali] Updated university id=18 (is_featured=0)
+[2025-11-30 07:58:03] [::1] [ali] Updated university id=18 (is_featured=0)
+[2025-11-30 07:58:21] [::1] [ali] Updated university id=18 (is_featured=0)
+[2025-11-30 07:59:14] [::1] [ali] Updated university id=19 (is_featured=0)
+[2025-11-30 08:00:38] [::1] [ali] Updated university id=19 (is_featured=0)
+[2025-11-30 08:01:00] [::1] [ali] Updated university id=19 (is_featured=1)
+[2025-11-30 14:23:39] [::1] [ali] Updated college id=4: الكلية اليمنية للعلوم الطبية
+[2025-11-30 14:23:39] [::1] [ali] Uploaded image for college id=4: img_692c455ba1b5c3.84200986.jpeg
+[2025-11-30 14:23:39] [::1] [ali] Uploaded image for college id=4: img_692c455bba4eb9.20922731.jpeg
+[2025-11-30 14:27:41] [::1] [ali] Added college id=9: جبر
+[2025-11-30 14:28:21] [::1] [ali] Added specialization 'نووي' in college_id=9
+[2025-11-30 14:29:18] [::1] [ali] Updated university id=20 (is_featured=1)
+[2025-12-01 10:03:07] [::1] [ali] Deleted college id=4 and removed images
+[2025-12-01 13:14:27] [::1] [ali] Added college id=10: الحربية
+[2025-12-01 13:15:07] [::1] [ali] Added specialization 'الناصر' in college_id=10
+[2025-12-02 07:21:29] [::1] [ali] Deleted university id=20 and removed images
+[2025-12-02 07:21:35] [::1] [ali] Deleted university id=17 and removed images
+[2025-12-02 07:21:40] [::1] [ali] Deleted university id=19 and removed images
+[2025-12-02 07:21:45] [::1] [ali] Deleted university id=16 and removed images
+[2025-12-02 07:21:50] [::1] [ali] Deleted university id=15 and removed images
+[2025-12-02 07:21:58] [::1] [ali] Deleted university id=13 and removed images
+[2025-12-02 07:22:04] [::1] [ali] Deleted university id=18 and removed images
+[2025-12-02 07:22:08] [::1] [ali] Deleted university id=12 and removed images
+[2025-12-02 07:22:14] [::1] [ali] Deleted university id=14 and removed images
+[2025-12-02 07:22:19] [::1] [ali] Deleted university id=11 and removed images
+[2025-12-02 07:22:24] [::1] [ali] Deleted university id=10 and removed images
+[2025-12-02 07:22:31] [::1] [ali] Deleted university id=9 and removed images
+[2025-12-02 07:22:38] [::1] [ali] Deleted university id=8 and removed images
+[2025-12-02 07:22:49] [::1] [ali] Deleted university id=7 and removed images
+[2025-12-02 07:22:54] [::1] [ali] Deleted university id=3 and removed images
+[2025-12-02 07:23:00] [::1] [ali] Deleted university id=1 and removed images
+[2025-12-02 07:23:05] [::1] [ali] Deleted university id=2 and removed images
+[2025-12-02 07:23:17] [::1] [ali] Deleted college id=2 and removed images
+[2025-12-02 07:23:23] [::1] [ali] Deleted college id=1 and removed images
+[2025-12-02 07:23:30] [::1] [ali] Deleted college id=3 and removed images
+[2025-12-02 07:23:36] [::1] [ali] Deleted college id=5 and removed images
+[2025-12-02 07:23:43] [::1] [ali] Deleted college id=6 and removed images
+[2025-12-02 07:23:49] [::1] [ali] Deleted college id=8 and removed images
+[2025-12-02 07:23:54] [::1] [ali] Deleted college id=10 and removed images
+[2025-12-02 07:24:00] [::1] [ali] Deleted college id=9 and removed images
+[2025-12-02 07:24:04] [::1] [ali] Specializations page colleges fallback query engaged
+[2025-12-02 07:24:04] [::1] [ali] Specializations page colleges fallback query engaged
+[2025-12-02 08:39:44] [::1] [ali] Updated university id=22 (is_featured=0)
+[2025-12-02 08:40:46] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 08:40:56] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 08:41:18] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 08:47:08] [::1] [ali] Updated university id=21 (is_featured=1)
+[2025-12-02 08:52:45] [::1] [ali] Updated university id=21 (is_featured=1)
+[2025-12-02 08:58:34] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 09:04:59] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 10:10:05] [::1] [ali] Updated university id=22 (is_featured=1)
+[2025-12-02 10:50:04] [::1] [ali] Added college id=11: كلية الطب والعلوم الصحية
+[2025-12-02 10:50:23] [::1] [ali] Added college id=12: كلية طب الاسنان
+[2025-12-02 10:50:39] [::1] [ali] Added college id=13: كلية الصيدلة
+[2025-12-02 10:50:57] [::1] [ali] Added college id=14: كلية الهندسة
+[2025-12-02 10:51:21] [::1] [ali] Added college id=15: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-12-02 10:51:35] [::1] [ali] Added college id=16: كلية العلوم
+[2025-12-02 10:52:09] [::1] [ali] Added college id=17: كلية الزراعة والاغذية والبيئة
+[2025-12-02 10:52:32] [::1] [ali] Added college id=18: كلية الشريعة والقانون
+[2025-12-02 10:52:49] [::1] [ali] Added college id=19: كلية التربية
+[2025-12-02 10:53:04] [::1] [ali] Added college id=20: كليات اللغات
+[2025-12-02 10:53:25] [::1] [ali] Added college id=21: كلية التجارة والاقتصاد
+[2025-12-02 10:53:43] [::1] [ali] Added college id=22: كلية الاعلام والاتصال
+[2025-12-02 10:54:15] [::1] [ali] Added college id=23: كلية الثروات النفطية والموارد الطبيعية
+[2025-12-02 10:54:32] [::1] [ali] Added college id=24: كلية الطب البيطري
+[2025-12-02 11:07:08] [::1] [ali] Updated college id=11: كلية الطب والعلوم الصحية
+[2025-12-02 11:09:07] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-12-03 13:36:39] [::1] [ali] Updated college id=24: كلية الطب البيطري
+[2025-12-03 13:39:15] [::1] [ali] Updated college id=20: كلية اللغات
+[2025-12-03 13:41:15] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال
+[2025-12-03 13:42:44] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد
+[2025-12-03 13:44:21] [::1] [ali] Updated college id=19: كلية التربية
+[2025-12-03 13:46:07] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية
+[2025-12-03 13:47:23] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-12-03 13:48:46] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة
+[2025-12-03 13:50:07] [::1] [ali] Updated college id=18: كلية الشريعة والقانون
+[2025-12-03 13:51:34] [::1] [ali] Updated college id=13: كلية الصيدلة
+[2025-12-03 13:52:41] [::1] [ali] Updated college id=24: كلية الطب البيطري
+[2025-12-03 13:54:17] [::1] [ali] Updated college id=11: كلية الطب والعلوم الصحية
+[2025-12-03 13:55:19] [::1] [ali] Updated college id=16: كلية العلوم
+[2025-12-03 13:56:30] [::1] [ali] Updated college id=14: كلية الهندسة
+[2025-12-03 13:57:41] [::1] [ali] Updated college id=12: كلية طب الاسنان
+[2025-12-03 14:21:36] [::1] [ali] Updated college id=20: كلية اللغات
+[2025-12-03 14:23:16] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال
+[2025-12-03 14:24:33] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد
+[2025-12-03 14:34:50] [::1] [ali] Updated college id=19: كلية التربية
+[2025-12-03 14:36:06] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية
+[2025-12-03 14:36:36] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات
+[2025-12-03 14:37:44] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة
+[2025-12-03 14:38:36] [::1] [ali] Updated college id=18: كلية الشريعة والقانون
+[2025-12-03 14:39:44] [::1] [ali] Updated college id=13: كلية الصيدلة
+[2025-12-03 14:41:08] [::1] [ali] Updated college id=11: كلية الطب والعلوم الصحية
+[2025-12-03 14:42:17] [::1] [ali] Updated college id=16: كلية العلوم
+[2025-12-03 14:43:22] [::1] [ali] Updated college id=14: كلية الهندسة
+[2025-12-03 14:44:22] [::1] [ali] Updated college id=12: كلية طب الاسنان
+[2025-12-03 17:35:36] [::1] [ali] Added specialization 'الصحافة والإعلام (صحافة – صحافة إلكترونية)' in college_id=22
+[2025-12-03 17:37:59] [::1] [ali] Added specialization 'الإذاعة والتلفزيون (الإنتاج المرئي والمسموع)' in college_id=22
+[2025-12-03 17:40:42] [::1] [ali] Added specialization 'العلاقات العامة والإعلان / الاتصال التسويقي' in college_id=22
+[2025-12-03 17:44:05] [::1] [ali] Added specialization 'الإعلام الرقمي / الإعلام الجديد / الوسائط الجديدة' in college_id=22
+[2025-12-03 17:51:46] [::1] [ali] Added specialization 'دراسات الإعلام والاتصال – بحوث وسياقات ثقافية / نظرية' in college_id=22
+[2025-12-03 17:54:13] [::1] [ali] Added specialization 'قتصاد' in college_id=21
+[2025-12-03 17:55:15] [::1] [ali] Added specialization 'إدارة أعمال' in college_id=21
+[2025-12-03 17:56:13] [::1] [ali] Added specialization 'محاسبة' in college_id=21
+[2025-12-03 17:57:06] [::1] [ali] Added specialization 'تمويل واستثمار / علوم مالية ومصرفية' in college_id=21
+[2025-12-03 17:57:55] [::1] [ali] Added specialization 'إحصاء / أساليب كمية / بحوث العمليات' in college_id=21
+[2025-12-03 17:59:43] [::1] [ali] Added specialization 'التربية الخاصة' in college_id=19
+[2025-12-03 18:00:54] [::1] [ali] Added specialization 'الإرشاد والتوجيه النفسي / الصحة النفسية' in college_id=19
+[2025-12-03 18:01:58] [::1] [ali] Added specialization 'مناهج وطرق تدريس (تدريس مواد – تعليم)' in college_id=19
+[2025-12-03 18:02:54] [::1] [ali] Added specialization 'الإدارة التربوية / تخطيط وسياسات التعليم' in college_id=19
+[2025-12-03 18:04:04] [::1] [ali] Added specialization 'رياض الأطفال / الطفولة المبكرة' in college_id=19
+[2025-12-03 18:05:30] [::1] [ali] Added specialization 'هندسة نفط وغاز' in college_id=23
+[2025-12-03 18:06:17] [::1] [ali] Added specialization 'علوم الأرض / الجيولوجيا البترولية' in college_id=23
+[2025-12-03 18:07:39] [::1] [ali] Added specialization 'علوم الحاسوب' in college_id=15
+[2025-12-03 18:08:17] [::1] [ali] Added specialization 'تكنولوجيا المعلومات' in college_id=15
+[2025-12-03 18:09:09] [::1] [ali] Added specialization 'نظم المعلومات' in college_id=15
+[2025-12-03 18:10:59] [::1] [ali] Added specialization 'الأمن السيبراني' in college_id=15
+[2025-12-03 18:11:43] [::1] [ali] Added specialization 'الذكاء الاصطناعي' in college_id=15
+[2025-12-03 18:12:18] [::1] [ali] Added specialization 'علم البيانات' in college_id=15
+[2025-12-03 18:12:56] [::1] [ali] Added specialization 'الجرافيكس والوسائط المتعددة' in college_id=15
+[2025-12-03 18:13:44] [::1] [ali] Added specialization 'علوم المحاصيل والتحسين الوراثي' in college_id=17
+[2025-12-03 18:14:50] [::1] [ali] Added specialization 'البستنة وتقنياتها' in college_id=17
+[2025-12-03 18:15:28] [::1] [ali] Added specialization 'علوم الأغذية والتغذية' in college_id=17
+[2025-12-03 18:16:00] [::1] [ali] Added specialization 'حماية النبات' in college_id=17
+[2025-12-03 18:16:32] [::1] [ali] Added specialization 'الموارد الحيوانية / الثروة الحيوانية' in college_id=17
+[2025-12-03 18:17:14] [::1] [ali] Added specialization 'الهندسة الزراعية والتقنيات الحديثة' in college_id=17
+[2025-12-03 18:17:42] [::1] [ali] Added specialization 'التربة والمياه والبيئة' in college_id=17
+[2025-12-03 18:18:24] [::1] [ali] Added specialization 'اقتصاد زراعي وإدارة الأعمال الزراعية / التنمية الريفية' in college_id=17
+[2025-12-03 18:20:33] [::1] [ali] Added specialization 'الشريعة والقانون' in college_id=18
+[2025-12-03 18:21:58] [::1] [ali] Added specialization 'علوم صيدلانية (' in college_id=13
+[2025-12-03 18:22:51] [::1] [ali] Added specialization 'صيدلة سريرية / دكتور صيدلي' in college_id=13
+[2025-12-03 18:24:16] [::1] [ali] Added specialization 'الطب البيطري' in college_id=24
+[2025-12-03 18:25:17] [::1] [ali] Added specialization 'طب وجراحة' in college_id=11
+[2025-12-03 18:25:55] [::1] [ali] Added specialization 'تمريض عالي' in college_id=11
+[2025-12-03 18:26:34] [::1] [ali] Added specialization 'تقنيات/تخصصات تطبيقية طبية' in college_id=11
+[2025-12-03 18:30:01] [::1] [ali] Added specialization 'كيمياء' in college_id=16
+[2025-12-03 18:30:28] [::1] [ali] Added specialization 'يزياء' in college_id=16
+[2025-12-03 18:31:27] [::1] [ali] Added specialization 'رياضيات بحتة' in college_id=16
+[2025-12-03 18:31:58] [::1] [ali] Added specialization 'رياضيات–حاسوب' in college_id=16
+[2025-12-03 18:32:27] [::1] [ali] Added specialization 'أحياء' in college_id=16
+[2025-12-03 18:32:57] [::1] [ali] Added specialization 'أحياء دقيقة' in college_id=16
+[2025-12-03 18:33:25] [::1] [ali] Added specialization 'نبات – كيمياء' in college_id=16
+[2025-12-03 18:33:59] [::1] [ali] Added specialization 'لغة عربية' in college_id=20
+[2025-12-03 18:34:23] [::1] [ali] Added specialization 'لغة إنجليزية' in college_id=20
+[2025-12-03 18:35:01] [::1] [ali] Added specialization 'لغة فرنسية' in college_id=20
+[2025-12-03 18:35:56] [::1] [ali] Updated specialization id=62
+[2025-12-03 18:36:19] [::1] [ali] Added specialization 'لغة ألمانية' in college_id=20
+[2025-12-03 18:36:48] [::1] [ali] Added specialization 'لغة فارسية' in college_id=20
+[2025-12-03 18:37:13] [::1] [ali] Added specialization 'رجمة' in college_id=20
+[2025-12-03 18:37:38] [::1] [ali] Added specialization 'الهندسة المدنية' in college_id=14
+[2025-12-03 18:38:12] [::1] [ali] Added specialization 'الهندسة الميكانيكية' in college_id=14
+[2025-12-03 18:38:48] [::1] [ali] Added specialization 'الهندسة الكهربائية' in college_id=14
+[2025-12-03 18:39:15] [::1] [ali] Added specialization 'الهندسة الميكاترونكس' in college_id=14
+[2025-12-03 18:39:38] [::1] [ali] Added specialization 'الهندسة المعمارية' in college_id=14
+[2025-12-03 18:39:59] [::1] [ali] Added specialization 'الهندسة الطبية الحيوية' in college_id=14
+[2025-12-03 18:40:31] [::1] [ali] Added specialization 'طب وجراحة الفم والأسنان' in college_id=12
+[2025-12-03 18:41:01] [::1] [ali] Added specialization 'تقني/فني أسنان' in college_id=12
+[2025-12-04 07:42:49] [::1] [ali] Updated specialization id=58
+[2025-12-04 07:44:26] [::1] [ali] Updated specialization id=59
+[2025-12-04 07:46:11] [::1] [ali] Updated specialization id=24
+[2025-12-04 07:46:22] [::1] [ali] Updated specialization id=24
+[2025-12-04 07:47:44] [::1] [ali] Updated specialization id=21
+[2025-12-04 07:49:11] [::1] [ali] Updated specialization id=46
+[2025-12-04 07:50:44] [::1] [ali] Updated specialization id=35
+[2025-12-04 07:52:02] [::1] [ali] Updated specialization id=28
+[2025-12-04 07:52:32] [::1] [ali] Updated specialization id=16
+[2025-12-04 07:53:58] [::1] [ali] Updated specialization id=26
+[2025-12-04 07:55:41] [::1] [ali] Updated specialization id=18
+[2025-12-04 07:57:41] [::1] [ali] Updated specialization id=40
+[2025-12-04 07:58:26] [::1] [ali] Updated specialization id=40
+[2025-12-04 07:59:05] [::1] [ali] Updated specialization id=45
+[2025-12-04 07:59:56] [::1] [ali] Updated specialization id=25
+[2025-12-04 08:00:41] [::1] [ali] Updated specialization id=38
+[2025-12-04 08:01:21] [::1] [ali] Updated specialization id=36
+[2025-12-04 08:01:45] [::1] [ali] Updated specialization id=47
+[2025-12-04 08:02:12] [::1] [ali] Updated specialization id=15
+[2025-12-04 08:03:01] [::1] [ali] Updated specialization id=50
+[2025-12-04 08:04:00] [::1] [ali] Updated specialization id=17
+[2025-12-04 08:05:09] [::1] [ali] Updated specialization id=43
+[2025-12-04 08:06:20] [::1] [ali] Updated specialization id=44
+[2025-12-04 08:07:40] [::1] [ali] Updated specialization id=72
+[2025-12-04 08:08:56] [::1] [ali] Updated specialization id=69
+[2025-12-04 08:09:56] [::1] [ali] Updated specialization id=67
+[2025-12-04 08:10:54] [::1] [ali] Updated specialization id=71
+[2025-12-04 08:11:38] [::1] [ali] Updated specialization id=70
+[2025-12-04 08:12:37] [::1] [ali] Updated specialization id=68
+[2025-12-04 08:13:32] [::1] [ali] Updated specialization id=74
+[2025-12-04 08:14:31] [::1] [ali] Updated specialization id=53
+[2025-12-04 08:15:31] [::1] [ali] Updated specialization id=33
+[2025-12-04 08:16:17] [::1] [ali] Updated specialization id=52
+[2025-12-04 08:17:13] [::1] [ali] Updated specialization id=23
+[2025-12-04 08:17:56] [::1] [ali] Updated specialization id=42
+[2025-12-04 08:18:23] [::1] [ali] Updated specialization id=19
+[2025-12-04 08:19:08] [::1] [ali] Updated specialization id=66
+[2025-12-04 08:20:23] [::1] [ali] Updated specialization id=29
+[2025-12-04 08:20:59] [::1] [ali] Updated specialization id=56
+[2025-12-04 08:21:40] [::1] [ali] Updated specialization id=57
+[2025-12-04 08:22:21] [::1] [ali] Updated specialization id=49
+[2025-12-04 08:23:14] [::1] [ali] Updated specialization id=51
+[2025-12-04 08:23:55] [::1] [ali] Updated specialization id=73
+[2025-12-04 08:24:37] [::1] [ali] Updated specialization id=37
+[2025-12-04 08:25:31] [::1] [ali] Updated specialization id=31
+[2025-12-04 08:25:45] [::1] [ali] Updated specialization id=31
+[2025-12-04 08:26:25] [::1] [ali] Updated specialization id=41
+[2025-12-04 08:26:54] [::1] [ali] Updated specialization id=32
+[2025-12-04 08:27:55] [::1] [ali] Updated specialization id=39
+[2025-12-04 08:28:35] [::1] [ali] Updated specialization id=48
+[2025-12-04 08:29:22] [::1] [ali] Updated specialization id=20
+[2025-12-04 08:29:43] [::1] [ali] Updated specialization id=20
+[2025-12-04 08:30:55] [::1] [ali] Updated specialization id=54
+[2025-12-04 08:31:48] [::1] [ali] Updated specialization id=64
+[2025-12-04 08:32:06] [::1] [ali] Updated specialization id=20
+[2025-12-04 08:32:51] [::1] [ali] Updated specialization id=62
+[2025-12-04 08:33:34] [::1] [ali] Updated specialization id=61
+[2025-12-04 08:34:00] [::1] [ali] Updated specialization id=70
+[2025-12-04 08:34:56] [::1] [ali] Updated specialization id=65
+[2025-12-04 08:35:29] [::1] [ali] Updated specialization id=63
+[2025-12-04 08:36:05] [::1] [ali] Updated specialization id=22
+[2025-12-04 08:37:04] [::1] [ali] Updated specialization id=27
+[2025-12-04 08:37:38] [::1] [ali] Updated specialization id=60
+[2025-12-04 08:38:32] [::1] [ali] Updated specialization id=34
+[2025-12-04 08:39:15] [::1] [ali] Updated specialization id=30
+[2025-12-04 08:39:56] [::1] [ali] Updated specialization id=55
+[2025-12-04 10:40:37] [::1] [ali] Added college id=25: كلية الطب والعلوم الصحية
+[2025-12-04 10:41:05] [::1] [ali] Added college id=26: كلية طب الأسنان
+[2025-12-04 10:41:27] [::1] [ali] Added college id=27: كلية العلوم الإدارية والإنسانية
+[2025-12-04 10:41:45] [::1] [ali] Added college id=28: كلية العلوم الطبية المساندة
+[2025-12-04 11:14:04] [::1] [ali] Updated college id=25: كلية الطب والعلوم الصحية
+[2025-12-04 11:15:19] [::1] [ali] Updated college id=27: كلية العلوم الإدارية والإنسانية
+[2025-12-04 11:15:48] [::1] [ali] Updated college id=28: كلية العلوم الطبية المساندة
+[2025-12-04 11:16:18] [::1] [ali] Updated college id=26: كلية طب الأسنان
+[2025-12-04 11:20:56] [::1] [ali] Updated college id=26: كلية طب الأسنان
+[2025-12-04 11:24:26] [::1] [ali] Updated college id=27: كلية العلوم الإدارية والإنسانية
+[2025-12-04 11:25:30] [::1] [ali] Updated college id=28: كلية العلوم الطبية المساندة
+[2025-12-04 11:25:49] [::1] [ali] Updated college id=26: كلية طب الأسنان
+[2025-12-04 11:26:52] [::1] [ali] Updated college id=25: كلية الطب والعلوم الصحية
+[2025-12-04 11:27:47] [::1] [ali] Added specialization 'الطب البشري' in college_id=25
+[2025-12-04 11:28:10] [::1] [ali] Added specialization 'المختبرات الطبية' in college_id=25
+[2025-12-04 11:28:26] [::1] [ali] Added specialization 'التمريض' in college_id=25
+[2025-12-04 11:28:42] [::1] [ali] Added specialization 'الصيدلة' in college_id=25
+[2025-12-04 11:29:12] [::1] [ali] Added specialization 'طب وجراحة الفم والأسنان' in college_id=26
+[2025-12-04 11:30:40] [::1] [ali] Deleted specialization id=77
+[2025-12-04 11:31:04] [::1] [ali] Deleted specialization id=78
+[2025-12-04 11:31:15] [::1] [ali] Deleted specialization id=75
+[2025-12-04 11:31:26] [::1] [ali] Deleted specialization id=76
+[2025-12-04 11:31:35] [::1] [ali] Deleted specialization id=79
+[2025-12-04 11:31:59] [::1] [ali] Added specialization 'الطب البشري' in college_id=25
+[2025-12-04 11:32:13] [::1] [ali] Added specialization 'التخدير والعناية المركزة' in college_id=25
+[2025-12-04 11:32:25] [::1] [ali] Added specialization 'التمريض' in college_id=25
+[2025-12-04 11:32:40] [::1] [ali] Added specialization 'التغذية العلاجية' in college_id=25
+[2025-12-04 11:32:54] [::1] [ali] Added specialization 'العلاج الطبيعي' in college_id=25
+[2025-12-04 11:33:09] [::1] [ali] Added specialization 'المختبرات الطبية' in college_id=25
+[2025-12-04 11:33:22] [::1] [ali] Added specialization 'الطوارئ والعناية ما قبل المستشفى' in college_id=25
+[2025-12-04 11:33:41] [::1] [ali] Added specialization 'طب وجراحة الفم والأسنان' in college_id=26
+[2025-12-04 11:34:55] [::1] [ali] Added college id=29: كلية الهندسة وتقنية المعلومات
+[2025-12-04 11:35:24] [::1] [ali] Added specialization 'هندسة الميكاترونكس' in college_id=29
+[2025-12-04 11:35:37] [::1] [ali] Added specialization 'هندسة الاتصالات' in college_id=29
+[2025-12-04 11:35:53] [::1] [ali] Added specialization 'هندسة الشبكات' in college_id=29
+[2025-12-04 11:36:11] [::1] [ali] Added specialization 'هندسة البرمجيات' in college_id=29
+[2025-12-04 11:36:23] [::1] [ali] Added specialization 'تقنية المعلومات' in college_id=29
+[2025-12-04 11:36:37] [::1] [ali] Added specialization 'نظم المعلومات' in college_id=29
+[2025-12-04 11:36:53] [::1] [ali] Added specialization 'إدارة الأعمال' in college_id=27
+[2025-12-04 11:37:09] [::1] [ali] Added specialization 'التسويق' in college_id=27
+[2025-12-04 11:37:24] [::1] [ali] Added specialization 'المحاسبة' in college_id=27
+[2025-12-04 11:37:35] [::1] [ali] Added specialization 'نظم المعلومات الإدارية' in college_id=27
+[2025-12-04 11:37:46] [::1] [ali] Added specialization 'اللغة الإنجليزية' in college_id=27
+[2025-12-04 11:37:58] [::1] [ali] Added specialization 'اللغة العربية' in college_id=27
+[2025-12-04 11:38:11] [::1] [ali] Added specialization 'الدراسات الإسلامية' in college_id=27
+[2025-12-04 11:38:29] [::1] [ali] Added specialization 'العلاج الطبيعي' in college_id=28
+[2025-12-04 11:38:53] [::1] [ali] Added specialization 'التخدير' in college_id=28
+[2025-12-04 11:39:06] [::1] [ali] Added specialization 'الأشعة' in college_id=28
+[2025-12-04 11:39:20] [::1] [ali] Added specialization 'العناية المركزة' in college_id=28
+[2025-12-04 11:39:32] [::1] [ali] Added specialization 'الإسعاف والطوارئ' in college_id=28
+[2025-12-04 11:39:44] [::1] [ali] Added specialization 'الصحة العامة' in college_id=28
+[2025-12-04 11:39:57] [::1] [ali] Added specialization 'التغذية العلاجية' in college_id=28
+[2025-12-04 11:41:01] [::1] [ali] Updated specialization id=80
+[2025-12-04 11:41:56] [::1] [ali] Updated specialization id=85
+[2025-12-04 11:42:36] [::1] [ali] Updated specialization id=81
+[2025-12-04 11:43:05] [::1] [ali] Updated specialization id=82
+[2025-12-04 11:44:17] [::1] [ali] Updated specialization id=103
+[2025-12-04 11:44:47] [::1] [ali] Deleted specialization id=107
+[2025-12-04 11:45:00] [::1] [ali] Updated specialization id=83
+[2025-12-04 11:45:39] [::1] [ali] Deleted specialization id=101
+[2025-12-04 11:45:55] [::1] [ali] Updated specialization id=84
+[2025-12-04 11:46:30] [::1] [ali] Updated specialization id=86
+[2025-12-04 11:47:19] [::1] [ali] Updated specialization id=87
+[2025-12-04 11:47:54] [::1] [ali] Updated specialization id=88
+[2025-12-04 11:48:18] [::1] [ali] Updated specialization id=89
+[2025-12-04 11:48:45] [::1] [ali] Updated specialization id=90
+[2025-12-04 11:49:08] [::1] [ali] Updated specialization id=91
+[2025-12-04 11:49:35] [::1] [ali] Updated specialization id=92
+[2025-12-04 11:50:15] [::1] [ali] Updated specialization id=93
+[2025-12-04 11:50:41] [::1] [ali] Updated specialization id=94
+[2025-12-04 11:51:08] [::1] [ali] Updated specialization id=96
+[2025-12-04 11:51:30] [::1] [ali] Updated specialization id=95
+[2025-12-04 11:51:56] [::1] [ali] Updated specialization id=97
+[2025-12-04 11:52:20] [::1] [ali] Updated specialization id=98
+[2025-12-04 11:52:39] [::1] [ali] Updated specialization id=99
+[2025-12-04 11:53:16] [::1] [ali] Updated specialization id=100
+[2025-12-04 11:53:57] [::1] [ali] Updated specialization id=84
+[2025-12-04 11:54:23] [::1] [ali] Updated specialization id=102
+[2025-12-04 11:55:16] [::1] [ali] Updated specialization id=103
+[2025-12-04 11:55:43] [::1] [ali] Updated specialization id=104
+[2025-12-04 11:56:33] [::1] [ali] Updated specialization id=105
+[2025-12-04 11:57:14] [::1] [ali] Updated specialization id=106
+[2025-12-04 11:58:31] [::1] [ali] Updated specialization id=83
+[2025-12-04 12:01:12] [::1] [ali] Added specialization 'الصيدلة السريرية' in college_id=28
+[2025-12-04 12:02:15] [::1] [ali] Updated specialization id=80
+[2025-12-04 12:03:10] [::1] [ali] Updated specialization id=85
+[2025-12-04 12:03:49] [::1] [ali] Updated specialization id=81
+[2025-12-04 12:04:35] [::1] [ali] Updated specialization id=82
+[2025-12-04 12:05:57] [::1] [ali] Updated specialization id=103
+[2025-12-04 13:14:19] [::1] [ali] Updated specialization id=83
+[2025-12-04 13:15:05] [::1] [ali] Updated specialization id=84
+[2025-12-04 13:16:31] [::1] [ali] Updated specialization id=86
+[2025-12-04 13:18:13] [::1] [ali] Updated specialization id=87
+[2025-12-04 13:19:34] [::1] [ali] Updated specialization id=88
+[2025-12-04 13:20:42] [::1] [ali] Updated specialization id=89
+[2025-12-04 13:21:42] [::1] [ali] Updated specialization id=90
+[2025-12-04 13:22:27] [::1] [ali] Updated specialization id=91
+[2025-12-04 13:23:14] [::1] [ali] Updated specialization id=92
+[2025-12-04 13:23:55] [::1] [ali] Updated specialization id=93
+[2025-12-04 13:24:37] [::1] [ali] Updated specialization id=94
+[2025-12-04 13:25:22] [::1] [ali] Updated specialization id=96
+[2025-12-04 13:26:13] [::1] [ali] Updated specialization id=95
+[2025-12-04 13:28:17] [::1] [ali] Updated specialization id=97
+[2025-12-04 13:28:49] [::1] [ali] Updated specialization id=98
+[2025-12-04 13:29:24] [::1] [ali] Updated specialization id=99
+[2025-12-04 13:30:04] [::1] [ali] Updated specialization id=100
+[2025-12-04 13:30:36] [::1] [ali] Updated specialization id=84
+[2025-12-04 13:31:07] [::1] [ali] Updated specialization id=102
+[2025-12-04 13:31:30] [::1] [ali] Updated specialization id=103
+[2025-12-04 13:32:01] [::1] [ali] Updated specialization id=104
+[2025-12-04 13:32:44] [::1] [ali] Updated specialization id=105
+[2025-12-04 13:33:07] [::1] [ali] Updated specialization id=83
+[2025-12-04 13:33:45] [::1] [ali] Updated specialization id=106
+[2025-12-04 13:34:26] [::1] [ali] Updated specialization id=108
+[2025-12-04 16:11:48] [::1] [ali] Added college id=30: التغذية العلاجية
+[2025-12-04 16:11:57] [::1] [ali] Deleted college id=30 and removed images
+[2025-12-04 16:12:12] [::1] [ali] Deleted university id=24 and removed images
+[2025-12-04 16:12:17] [::1] [ali] Deleted university id=23 and removed images
+[2025-12-04 17:38:12] [::1] [ali] Deleted university id=25 and removed images
+[2025-12-04 17:43:34] [::1] [ali] Added college id=31: الكلب
+[2025-12-04 17:44:49] [::1] [ali] Deleted college id=31 and removed images
+[2025-12-05 13:40:12] [::1] [ali] Added college id=32: نابلس
+[2025-12-05 13:41:27] [::1] [ali] Deleted college id=32 and removed images
+[2025-12-05 13:53:03] [::1] [ali] Added college id=33: أوروبا الدولية
+[2025-12-05 13:53:26] [::1] [ali] Added specialization 'صيدلة' in college_id=33
+[2025-12-05 13:53:45] [::1] [ali] Added specialization 'مساعد طبيب' in college_id=33
+[2025-12-05 13:54:12] [::1] [ali] Added specialization 'تمريض' in college_id=33
+[2025-12-05 13:54:29] [::1] [ali] Added specialization 'إدارة طبية' in college_id=33
+[2025-12-05 13:54:46] [::1] [ali] Added specialization 'إدارة وتسويق' in college_id=33
+[2025-12-05 14:26:19] [::1] [ali] Updated specialization id=110
+[2025-12-05 14:31:19] [::1] [ali] Updated college id=33: أوروبا الدولية
+[2025-12-05 17:31:59] [::1] [ali] Added college id=34: نابلس
+[2025-12-05 17:41:16] [::1] [ali] Added college id=35: جمال
+[2025-12-05 17:51:39] [::1] [ali] Deleted college id=35 and removed images
+[2025-12-05 18:08:48] [::1] [ali] Updated college id=33: كلية أوروبا الدولية
+[2025-12-05 18:31:40] [::1] [ali] Added college id=36: عععععععع
+[2025-12-05 18:31:56] [::1] [ali] Added college id=37: عععععععع
+[2025-12-05 18:32:12] [::1] [ali] Added college id=38: عععععععع
+[2025-12-05 18:32:44] [::1] [ali] Added college id=39: عععععععع
+[2025-12-05 18:32:44] [::1] [ali] Added college id=40: عععععععع
+[2025-12-05 18:32:44] [::1] [ali] Added college id=41: عععععععع
+[2025-12-05 18:32:45] [::1] [ali] Added college id=42: عععععععع
+[2025-12-05 18:32:45] [::1] [ali] Added college id=43: عععععععع
+[2025-12-05 18:32:46] [::1] [ali] Added college id=44: عععععععع
+[2025-12-05 18:32:46] [::1] [ali] Added college id=45: عععععععع
+[2025-12-05 18:32:46] [::1] [ali] Added college id=46: عععععععع
+[2025-12-05 18:32:46] [::1] [ali] Added college id=47: عععععععع
+[2025-12-05 18:32:46] [::1] [ali] Added college id=48: عععععععع
+[2025-12-05 18:35:57] [::1] [ali] Added college id=49: مالك
+[2025-12-05 18:48:27] [::1] [ali] Added college id=50: جاعل
+[2025-12-05 18:48:47] [::1] [ali] Deleted college id=50 and removed images
+[2025-12-05 18:49:06] [::1] [ali] Added college id=51: جاعل
+[2025-12-05 18:57:10] [::1] [ali] Added college id=52: أمجد
+[2025-12-05 19:03:32] [::1] [ali] Added college id=53: صالح
+[2025-12-06 04:28:28] [::1] [ali] Added college id=54: كمال
+[2025-12-06 04:28:43] [::1] [ali] Added college id=55: كمال
+[2025-12-06 04:29:59] [::1] [ali] Added college id=56: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=57: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=58: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=59: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=60: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=61: كمال
+[2025-12-06 04:31:28] [::1] [ali] Added college id=62: كمال
+[2025-12-06 04:33:27] [::1] [ali] Added college id=63: سرحان
+[2025-12-06 04:33:50] [::1] [ali] Added college id=64: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=65: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=66: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=67: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=68: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=69: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=70: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=71: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=72: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=73: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=74: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=75: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=76: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=77: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=78: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=79: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=80: القاضي
+[2025-12-06 04:34:56] [::1] [ali] Added college id=81: القاضي
+[2025-12-06 04:36:43] [::1] [ali] Deleted college id=52 and removed images
+[2025-12-06 04:36:52] [::1] [ali] Deleted college id=64 and removed images
+[2025-12-06 04:37:02] [::1] [ali] Deleted college id=65 and removed images
+[2025-12-06 04:37:07] [::1] [ali] Deleted college id=66 and removed images
+[2025-12-06 04:37:12] [::1] [ali] Deleted college id=67 and removed images
+[2025-12-06 04:37:27] [::1] [ali] Deleted college id=68 and removed images
+[2025-12-06 04:37:27] [::1] [ali] Deleted college id=68 and removed images
+[2025-12-06 04:37:27] [::1] [ali] Deleted college id=68 and removed images
+[2025-12-06 04:37:27] [::1] [ali] Deleted college id=68 and removed images
+[2025-12-06 04:37:27] [::1] [ali] Deleted college id=68 and removed images
+[2025-12-06 04:37:32] [::1] [ali] Deleted college id=69 and removed images
+[2025-12-06 04:37:36] [::1] [ali] Deleted college id=70 and removed images
+[2025-12-06 04:37:41] [::1] [ali] Deleted college id=71 and removed images
+[2025-12-06 04:37:45] [::1] [ali] Deleted college id=72 and removed images
+[2025-12-06 04:38:00] [::1] [ali] Deleted college id=73 and removed images
+[2025-12-06 04:38:00] [::1] [ali] Deleted college id=73 and removed images
+[2025-12-06 04:38:08] [::1] [ali] Deleted college id=74 and removed images
+[2025-12-06 04:38:14] [::1] [ali] Deleted college id=76 and removed images
+[2025-12-06 04:38:19] [::1] [ali] Deleted college id=75 and removed images
+[2025-12-06 04:38:41] [::1] [ali] Deleted college id=77 and removed images
+[2025-12-06 04:38:41] [::1] [ali] Deleted college id=77 and removed images
+[2025-12-06 04:38:41] [::1] [ali] Deleted college id=77 and removed images
+[2025-12-06 04:38:41] [::1] [ali] Deleted college id=77 and removed images
+[2025-12-06 04:38:48] [::1] [ali] Deleted college id=78 and removed images
+[2025-12-06 04:38:55] [::1] [ali] Deleted college id=79 and removed images
+[2025-12-06 04:39:16] [::1] [ali] Deleted college id=80 and removed images
+[2025-12-06 04:39:16] [::1] [ali] Deleted college id=80 and removed images
+[2025-12-06 04:39:16] [::1] [ali] Deleted college id=80 and removed images
+[2025-12-06 04:39:23] [::1] [ali] Deleted college id=81 and removed images
+[2025-12-06 04:39:40] [::1] [ali] Deleted college id=51 and removed images
+[2025-12-06 04:39:44] [::1] [ali] Deleted college id=51 and removed images
+[2025-12-06 04:40:14] [::1] [ali] Deleted college id=51 and removed images
+[2025-12-06 04:40:14] [::1] [ali] Deleted college id=53 and removed images
+[2025-12-06 04:40:14] [::1] [ali] Deleted college id=63 and removed images
+[2025-12-06 04:41:46] [::1] [ali] Deleted college id=34 and removed images
+[2025-12-06 04:41:53] [::1] [ali] Deleted college id=49 and removed images
+[2025-12-06 04:41:59] [::1] [ali] Deleted college id=61 and removed images
+[2025-12-06 04:42:17] [::1] [ali] Deleted college id=62 and removed images
+[2025-12-06 04:42:18] [::1] [ali] Deleted college id=60 and removed images
+[2025-12-06 04:42:18] [::1] [ali] Deleted college id=59 and removed images
+[2025-12-06 04:42:18] [::1] [ali] Deleted college id=58 and removed images
+[2025-12-06 04:42:24] [::1] [ali] Deleted college id=57 and removed images
+[2025-12-06 04:42:48] [::1] [ali] Deleted college id=54 and removed images
+[2025-12-06 04:42:48] [::1] [ali] Deleted college id=56 and removed images
+[2025-12-06 04:42:48] [::1] [ali] Deleted college id=55 and removed images
+[2025-12-06 04:44:37] [::1] [ali] Added college id=82: أمجد
+[2025-12-06 04:46:04] [::1] [ali] Added college id=83: ناعم
+[2025-12-06 04:46:28] [::1] [ali] Added college id=84: علي
+[2025-12-06 04:50:10] [::1] [ali] Deleted college id=83 and removed images
+[2025-12-06 04:52:31] [::1] [ali] Updated college id=82: أمجد
+[2025-12-06 10:50:23] [::1] [ali] Added college id=85: جميل
+[2025-12-06 10:52:19] [::1] [ali] Added college id=86: صلاح
+[2025-12-06 10:52:50] [::1] [ali] Added college id=87: التغذية العلاجية
+[2025-12-06 10:53:16] [::1] [ali] Updated college id=87: التغذية العلاجية
+[2025-12-06 10:53:52] [::1] [ali] Deleted college id=87 and removed images
+[2025-12-06 10:53:59] [::1] [ali] Deleted college id=84 and removed images
+[2025-12-06 10:54:06] [::1] [ali] Deleted college id=86 and removed images
+[2025-12-06 10:54:14] [::1] [ali] Deleted college id=85 and removed images
+[2025-12-06 11:23:17] [::1] [ali] Added college id=88: نابلس
+[2025-12-06 11:39:41] [::1] [ali] Updated college id=82: أمجد (Featured: 1)
+[2025-12-06 11:40:11] [::1] [ali] Updated college id=82: أمجد (Featured: 0)
+[2025-12-06 11:41:16] [::1] [ali] Added college id=89: سالم
+[2025-12-06 11:42:00] [::1] [ali] Updated college id=89: سالم (Featured: 0)
+[2025-12-06 11:59:42] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات (Featured: 0)
+[2025-12-06 13:20:18] [::1] [ali] Updated college id=82: أمجد (Featured: 0)
+[2025-12-06 13:20:35] [::1] [ali] Updated college id=82: أمجد (Featured: 0)
+[2025-12-06 13:22:01] [::1] [ali] Updated college id=82: أمجد (Featured: 0)
+[2025-12-06 17:58:32] [::1] [ali] Updated specialization id=112
+[2025-12-06 18:03:04] [::1] [ali] Updated specialization id=113
+[2025-12-06 18:07:56] [::1] [ali] Updated specialization id=111
+[2025-12-06 18:08:55] [::1] [ali] Updated specialization id=111
+[2025-12-06 18:09:26] [::1] [ali] Updated specialization id=113
+[2025-12-06 18:13:09] [::1] [ali] Updated specialization id=109
+[2025-12-06 18:17:26] [::1] [ali] Updated specialization id=110
+[2025-12-06 18:17:30] [::1] [ali] Updated specialization id=110
+[2025-12-06 19:02:38] [::1] [ali] Deleted college id=88 and removed images
+[2025-12-07 04:10:01] [::1] [ali] Added college id=90: منصور
+[2025-12-07 04:10:28] [::1] [ali] Added college id=91: جاسم
+[2025-12-07 04:11:07] [::1] [ali] Updated college id=90: منصور (Featured: 0)
+[2025-12-07 04:12:01] [::1] [ali] Updated college id=91: جاسم (Featured: 1)
+[2025-12-07 07:13:57] [::1] [ali] Deleted college id=82 and removed images
+[2025-12-07 07:35:00] [::1] [ali] Added college id=92: التغذية العلاجية
+[2025-12-07 07:35:50] [::1] [ali] Added college id=93: تاعب
+[2025-12-07 11:21:56] [::1] [ali] Deleted university id=27 and removed images
+[2025-12-07 11:22:00] [::1] [ali] Deleted university id=26 and removed images
+[2025-12-07 11:37:46] [::1] [ali] Updated university id=21
+[2025-12-07 11:38:14] [::1] [ali] Updated university id=21
+[2025-12-07 11:38:47] [::1] [ali] Updated college id=92: التغذية العلاجية (Featured: 0)
+[2025-12-07 11:40:26] [::1] [ali] Added college id=94: التغذية العلاجية
+[2025-12-07 13:46:57] [::1] [ali] Deleted college id=92 and removed images
+[2025-12-07 13:47:01] [::1] [ali] Deleted college id=94 and removed images
+[2025-12-07 13:47:06] [::1] [ali] Deleted college id=93 and removed images
+[2025-12-07 13:47:10] [::1] [ali] Deleted college id=91 and removed images
+[2025-12-07 13:47:20] [::1] [ali] Deleted college id=89 and removed images
+[2025-12-07 13:47:27] [::1] [ali] Deleted college id=90 and removed images
+[2025-12-07 18:31:49] [::1] [ali] Added college id=95: النكد
+[2025-12-07 18:32:34] [::1] [ali] Added college id=96: التعب
+[2025-12-07 18:33:08] [::1] [ali] Added college id=97: جحدر
+[2025-12-07 18:33:31] [::1] [ali] Added specialization 'نابلس' in college_id=96
+[2025-12-07 18:35:40] [::1] [ali] Updated university id=28
+[2025-12-07 19:22:25] [::1] [ali] Deleted university id=29 and removed images
+[2025-12-07 19:23:29] [::1] [ali] Updated university id=28
+[2025-12-08 08:23:12] [::1] [ali] Updated university id=22
+[2025-12-08 08:25:19] [::1] [ali] Updated university id=21
+[2025-12-08 08:28:20] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 0)
+[2025-12-08 08:28:20] [::1] [ali] Uploaded image for college id=33: img_69367e143f6243.24568693.jpg
+[2025-12-08 08:28:20] [::1] [ali] Uploaded image for college id=33: img_69367e1456d8e6.59678155.jpg
+[2025-12-08 08:29:44] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال (Featured: 0)
+[2025-12-08 08:29:44] [::1] [ali] Uploaded image for college id=22: img_69367e68328171.47115698.jpg
+[2025-12-08 08:34:18] [::1] [ali] Updated university id=22
+[2025-12-08 09:50:30] [::1] [ali] Updated university id=22
+[2025-12-08 10:20:33] [::1] [ali] Updated university id=22
+[2025-12-08 10:23:03] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 0)
+[2025-12-08 10:23:03] [::1] [ali] Uploaded image for college id=33: img_693698f7bbc9e1.64210493.jpg
+[2025-12-08 10:23:03] [::1] [ali] Uploaded image for college id=33: img_693698f7dd9b97.45061265.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f7e5c629.35876191.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f809fb31.97548108.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f814fa04.90945356.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f81ce595.31937532.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f8253246.32814126.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f8380cf9.23901835.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f8405e18.35560116.jpg
+[2025-12-08 10:23:04] [::1] [ali] Uploaded image for college id=33: img_693698f87ce5b6.67393506.jpg
+[2025-12-08 11:42:01] [::1] [ali] Updated university id=22
+[2025-12-08 12:10:49] [::1] [ali] Updated university id=22
+[2025-12-08 13:32:28] [::1] [ali] Updated university id=32
+[2025-12-08 13:43:37] [::1] [ali] Updated university id=33
+[2025-12-08 13:48:57] [::1] [ali] Deleted university id=34 and removed images
+[2025-12-08 13:49:03] [::1] [ali] Deleted university id=33 and removed images
+[2025-12-08 13:49:12] [::1] [ali] Deleted university id=32 and removed images
+[2025-12-08 13:49:19] [::1] [ali] Deleted university id=31 and removed images
+[2025-12-08 13:49:26] [::1] [ali] Deleted university id=30 and removed images
+[2025-12-08 14:24:11] [::1] [ali] Deleted university id=37 and removed images
+[2025-12-08 14:24:15] [::1] [ali] Deleted university id=36 and removed images
+[2025-12-08 14:24:18] [::1] [ali] Deleted university id=35 and removed images
+[2025-12-08 14:24:22] [::1] [ali] Deleted university id=28 and removed images
+[2025-12-08 18:09:59] [::1] [ali] Added university id=41: نتالبي
+[2025-12-08 18:12:32] [::1] [ali] Updated university id=22
+[2025-12-08 18:13:22] [::1] [ali] Updated college id=97: جحدر (Featured: 0)
+[2025-12-08 18:13:22] [::1] [ali] Uploaded image for college id=97: img_693707326a1a52.80159874.jpg
+[2025-12-08 18:13:22] [::1] [ali] Uploaded image for college id=97: img_693707328470a5.05954957.jpg
+[2025-12-08 18:23:53] [::1] [ali] Added university id=42: كمخه
+[2025-12-08 18:49:32] [::1] [ali] Added university id=43: تابي
+[2025-12-08 18:51:38] [::1] [ali] Updated university id=43: تابي (Featured: 0)
+[2025-12-08 19:19:02] [::1] [ali] Updated university id=38: نابلس (Featured: 1)
+[2025-12-08 19:19:02] [::1] [ali] Uploaded image for university id=38: img_69371696966e03.82940483.jpg
+[2025-12-08 19:19:02] [::1] [ali] Uploaded image for university id=38: img_69371696a2de04.04039390.jpg
+[2025-12-08 19:20:44] [::1] [ali] Updated university id=38: نابلس (Featured: 0)
+[2025-12-09 08:17:10] [::1] [ali] Added university id=44: ايطاليا
+[2025-12-09 09:07:26] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 09:07:38] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 09:08:09] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 09:08:20] [::1] [ali] Updated university id=40: التغذية العلاجية (Featured: 1)
+[2025-12-09 09:08:43] [::1] [ali] Updated college id=97: جحدر (Featured: 1)
+[2025-12-09 09:08:55] [::1] [ali] Updated college id=97: جحدر (Featured: 1)
+[2025-12-09 10:57:52] [::1] [ali] Deleted college id=96 and removed images
+[2025-12-09 10:57:58] [::1] [ali] Deleted college id=95 and removed images
+[2025-12-09 10:58:04] [::1] [ali] Deleted college id=97 and removed images
+[2025-12-09 10:58:17] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 1)
+[2025-12-09 10:58:33] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_69367e143f6243.24568693.jpg
+[2025-12-09 10:58:33] [::1] [ali] Deleted image id=12 for college id=33
+[2025-12-09 10:58:40] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f809fb31.97548108.jpg
+[2025-12-09 10:58:40] [::1] [ali] Deleted image id=18 for college id=33
+[2025-12-09 10:58:44] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f7e5c629.35876191.jpg
+[2025-12-09 10:58:44] [::1] [ali] Deleted image id=17 for college id=33
+[2025-12-09 10:58:47] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f814fa04.90945356.jpg
+[2025-12-09 10:58:47] [::1] [ali] Deleted image id=19 for college id=33
+[2025-12-09 10:58:50] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f81ce595.31937532.jpg
+[2025-12-09 10:58:50] [::1] [ali] Deleted image id=20 for college id=33
+[2025-12-09 10:58:52] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f8253246.32814126.jpg
+[2025-12-09 10:58:52] [::1] [ali] Deleted image id=21 for college id=33
+[2025-12-09 10:58:56] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f8380cf9.23901835.jpg
+[2025-12-09 10:58:56] [::1] [ali] Deleted image id=22 for college id=33
+[2025-12-09 10:59:00] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f8405e18.35560116.jpg
+[2025-12-09 10:59:00] [::1] [ali] Deleted image id=23 for college id=33
+[2025-12-09 10:59:03] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f87ce5b6.67393506.jpg
+[2025-12-09 10:59:03] [::1] [ali] Deleted image id=24 for college id=33
+[2025-12-09 10:59:15] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_69367e1456d8e6.59678155.jpg
+[2025-12-09 10:59:15] [::1] [ali] Deleted image id=13 for college id=33
+[2025-12-09 10:59:18] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 1)
+[2025-12-09 10:59:56] [::1] [ali] Deleted university id=42 and removed images
+[2025-12-09 11:00:01] [::1] [ali] Deleted university id=44 and removed images
+[2025-12-09 11:00:05] [::1] [ali] Deleted university id=40 and removed images
+[2025-12-09 11:00:09] [::1] [ali] Deleted university id=43 and removed images
+[2025-12-09 11:00:12] [::1] [ali] Deleted university id=41 and removed images
+[2025-12-09 11:00:16] [::1] [ali] Deleted university id=39 and removed images
+[2025-12-09 11:00:19] [::1] [ali] Deleted university id=38 and removed images
+[2025-12-09 11:02:11] [::1] [ali] Updated university id=22: جامعة الأندلس (Featured: 1)
+[2025-12-09 11:02:11] [::1] [ali] Uploaded image for university id=22: img_6937f3a3b0f409.61625834.jpg
+[2025-12-09 11:02:11] [::1] [ali] Uploaded image for university id=22: img_6937f3a3d40667.36915057.png
+[2025-12-09 11:02:12] [::1] [ali] Uploaded image for university id=22: img_6937f3a3eefbf8.37080037.png
+[2025-12-09 11:03:36] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 11:03:36] [::1] [ali] Uploaded image for university id=21: img_6937f3f87f52b2.47611912.jpg
+[2025-12-09 11:04:09] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 11:04:09] [::1] [ali] Uploaded image for university id=21: img_6937f4197d2134.19208572.jpg
+[2025-12-09 11:05:36] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال (Featured: 0)
+[2025-12-09 11:05:36] [::1] [ali] Uploaded image for college id=22: img_6937f4703d91b3.67094278.jpg
+[2025-12-09 11:06:46] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 11:06:46] [::1] [ali] Uploaded image for college id=21: img_6937f4b6bdb553.72403735.jpg
+[2025-12-09 11:09:23] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 11:09:23] [::1] [ali] Uploaded image for college id=19: img_6937f5532029c8.51294229.jpg
+[2025-12-09 11:09:41] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 11:09:41] [::1] [ali] Uploaded image for college id=19: img_6937f565203df6.00983211.jpg
+[2025-12-09 11:09:51] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\19\img_6937f5532029c8.51294229.jpg
+[2025-12-09 11:09:51] [::1] [ali] Deleted image id=29 for college id=19
+[2025-12-09 11:10:09] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 11:10:09] [::1] [ali] Uploaded image for college id=19: img_6937f581cbfb77.23378138.jpg
+[2025-12-09 11:10:33] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 11:10:33] [::1] [ali] Uploaded image for college id=19: img_6937f599c59377.67590274.jpg
+[2025-12-09 11:10:41] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\19\img_6937f565203df6.00983211.jpg
+[2025-12-09 11:10:41] [::1] [ali] Deleted image id=30 for college id=19
+[2025-12-09 11:10:50] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 11:11:20] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية (Featured: 0)
+[2025-12-09 11:11:21] [::1] [ali] Uploaded image for college id=23: img_6937f5c8e2e715.68113303.jpg
+[2025-12-09 11:12:16] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية (Featured: 0)
+[2025-12-09 11:12:16] [::1] [ali] Uploaded image for college id=23: img_6937f600040fa4.83675033.jpg
+[2025-12-09 11:12:27] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\23\img_6937f5c8e2e715.68113303.jpg
+[2025-12-09 11:12:27] [::1] [ali] Deleted image id=33 for college id=23
+[2025-12-09 11:12:36] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية (Featured: 0)
+[2025-12-09 11:12:36] [::1] [ali] Uploaded image for college id=23: img_6937f614af4146.52981628.jpg
+[2025-12-09 11:13:51] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات (Featured: 0)
+[2025-12-09 11:13:52] [::1] [ali] Uploaded image for college id=15: img_6937f65fe05289.92261520.jpg
+[2025-12-09 11:14:15] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات (Featured: 0)
+[2025-12-09 11:14:16] [::1] [ali] Uploaded image for college id=15: img_6937f677e2d2f2.41934615.jpg
+[2025-12-09 11:15:24] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة (Featured: 0)
+[2025-12-09 11:15:24] [::1] [ali] Uploaded image for college id=17: img_6937f6bc39e360.74995564.jpg
+[2025-12-09 11:15:54] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة (Featured: 0)
+[2025-12-09 11:15:54] [::1] [ali] Uploaded image for college id=17: img_6937f6da2cf670.18642959.jpg
+[2025-12-09 11:16:33] [::1] [ali] Updated college id=18: كلية الشريعة والقانون (Featured: 0)
+[2025-12-09 11:16:33] [::1] [ali] Uploaded image for college id=18: img_6937f70161d7a6.83032482.jpg
+[2025-12-09 11:16:56] [::1] [ali] Updated college id=18: كلية الشريعة والقانون (Featured: 0)
+[2025-12-09 11:16:56] [::1] [ali] Uploaded image for college id=18: img_6937f718d78681.71641800.jpg
+[2025-12-09 11:17:44] [::1] [ali] Updated college id=13: كلية الصيدلة (Featured: 0)
+[2025-12-09 11:17:44] [::1] [ali] Uploaded image for college id=13: img_6937f74855e047.85531628.jpg
+[2025-12-09 11:18:14] [::1] [ali] Updated college id=13: كلية الصيدلة (Featured: 0)
+[2025-12-09 11:18:14] [::1] [ali] Uploaded image for college id=13: img_6937f7669d09a9.24675591.jpg
+[2025-12-09 11:19:02] [::1] [ali] Updated college id=24: كلية الطب البيطري (Featured: 0)
+[2025-12-09 11:19:02] [::1] [ali] Uploaded image for college id=24: img_6937f7966ef1f3.19944088.jpg
+[2025-12-09 11:19:57] [::1] [ali] Updated college id=24: كلية الطب البيطري (Featured: 0)
+[2025-12-09 11:19:57] [::1] [ali] Uploaded image for college id=24: img_6937f7cd251ba6.31783741.jpg
+[2025-12-09 11:24:20] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 11:24:29] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 11:24:42] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 11:24:42] [::1] [ali] Uploaded image for college id=16: img_6937f8ea334820.91679251.jpg
+[2025-12-09 11:25:03] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 11:25:03] [::1] [ali] Uploaded image for college id=16: img_6937f8ff8e17d4.72979762.jpg
+[2025-12-09 11:26:52] [::1] [ali] Updated college id=14: كلية الهندسة (Featured: 0)
+[2025-12-09 11:26:52] [::1] [ali] Uploaded image for college id=14: img_6937f96c23f2e5.45267143.jpg
+[2025-12-09 11:27:19] [::1] [ali] Updated college id=14: كلية الهندسة (Featured: 0)
+[2025-12-09 11:27:19] [::1] [ali] Uploaded image for college id=14: img_6937f987529244.29347594.jpg
+[2025-12-09 11:27:27] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\14\img_6937f96c23f2e5.45267143.jpg
+[2025-12-09 11:27:27] [::1] [ali] Deleted image id=48 for college id=14
+[2025-12-09 11:27:39] [::1] [ali] Updated college id=14: كلية الهندسة (Featured: 0)
+[2025-12-09 11:27:39] [::1] [ali] Uploaded image for college id=14: img_6937f99b06f6a2.53089652.jpg
+[2025-12-09 11:28:30] [::1] [ali] Updated college id=12: كلية طب الاسنان (Featured: 0)
+[2025-12-09 11:28:30] [::1] [ali] Uploaded image for college id=12: img_6937f9ced642a8.42777118.jpg
+[2025-12-09 11:28:31] [::1] [ali] Uploaded image for college id=12: img_6937f9cedcb3f5.85152015.jpg
+[2025-12-09 11:28:46] [::1] [ali] Updated college id=12: كلية طب الاسنان (Featured: 0)
+[2025-12-09 11:28:46] [::1] [ali] Uploaded image for college id=12: img_6937f9de3a0503.08896093.jpg
+[2025-12-09 11:30:57] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال (Featured: 0)
+[2025-12-09 11:30:57] [::1] [ali] Uploaded image for college id=22: img_6937fa61a0b8c7.24202137.jpg
+[2025-12-09 11:31:55] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\22\img_6937fa61a0b8c7.24202137.jpg
+[2025-12-09 11:31:55] [::1] [ali] Deleted image id=54 for college id=22
+[2025-12-09 11:34:04] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\22\img_69367e68328171.47115698.jpg
+[2025-12-09 11:34:04] [::1] [ali] Deleted image id=14 for college id=22
+[2025-12-09 11:36:25] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 11:36:25] [::1] [ali] Uploaded image for college id=21: img_6937fba9d4c961.40973568.jpg
+[2025-12-09 11:36:48] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 11:36:48] [::1] [ali] Uploaded image for college id=21: img_6937fbc0372f29.74503332.jpg
+[2025-12-09 14:10:54] [::1] [ali] Updated college id=11: كلية الطب والعلوم الصحية (Featured: 0)
+[2025-12-09 14:16:56] [::1] [ali] Updated college id=20: كلية اللغات (Featured: 0)
+[2025-12-09 14:25:37] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 14:28:09] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 1)
+[2025-12-09 18:30:21] [::1] [ali] Updated college id=11: كلية الطب والعلوم الصحية (Featured: 0)
+[2025-12-09 18:30:21] [::1] [ali] Uploaded image for college id=11: img_69385cadb270a0.70224938.jpg
+[2025-12-09 18:30:22] [::1] [ali] Uploaded image for college id=11: img_69385cadc2e9d6.96465926.jpg
+[2025-12-09 18:30:22] [::1] [ali] Uploaded image for college id=11: img_69385cae285126.45190668.jpg
+[2025-12-09 18:31:14] [::1] [ali] Updated college id=20: كلية اللغات (Featured: 0)
+[2025-12-09 18:31:14] [::1] [ali] Uploaded image for college id=20: img_69385ce2ade1a9.69087619.png
+[2025-12-09 18:31:14] [::1] [ali] Uploaded image for college id=20: img_69385ce2cdcef9.13789212.jpg
+[2025-12-09 18:32:06] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال (Featured: 0)
+[2025-12-09 18:32:06] [::1] [ali] Uploaded image for college id=22: img_69385d16179433.55303033.jpg
+[2025-12-09 18:32:06] [::1] [ali] Uploaded image for college id=22: img_69385d162ea5c7.03604291.jpg
+[2025-12-09 18:35:46] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 1)
+[2025-12-09 18:40:00] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f7dd9b97.45061265.jpg
+[2025-12-09 18:40:00] [::1] [ali] Deleted image id=16 for college id=33
+[2025-12-09 18:40:04] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\33\img_693698f7bbc9e1.64210493.jpg
+[2025-12-09 18:40:04] [::1] [ali] Deleted image id=15 for college id=33
+[2025-12-09 18:40:30] [::1] [ali] Updated college id=33: كلية أوروبا الدولية (Featured: 1)
+[2025-12-09 18:40:30] [::1] [ali] Uploaded image for college id=33: img_69385f0e919884.63094542.jpg
+[2025-12-09 18:40:30] [::1] [ali] Uploaded image for college id=33: img_69385f0eab29e9.24510384.jpg
+[2025-12-09 18:40:59] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\22\img_6937f4703d91b3.67094278.jpg
+[2025-12-09 18:40:59] [::1] [ali] Deleted image id=27 for college id=22
+[2025-12-09 18:41:10] [::1] [ali] Updated college id=22: كلية الاعلام والاتصال (Featured: 0)
+[2025-12-09 18:41:11] [::1] [ali] Uploaded image for college id=22: img_69385f36e93352.75347181.jpg
+[2025-12-09 18:41:52] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 18:41:52] [::1] [ali] Uploaded image for college id=21: img_69385f6050d926.98807419.jpg
+[2025-12-09 18:42:18] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 18:42:18] [::1] [ali] Uploaded image for college id=21: img_69385f7acce122.06875480.jpg
+[2025-12-09 18:42:26] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\21\img_6937f4b6bdb553.72403735.jpg
+[2025-12-09 18:42:26] [::1] [ali] Deleted image id=28 for college id=21
+[2025-12-09 18:42:30] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\21\img_6937fbc0372f29.74503332.jpg
+[2025-12-09 18:42:30] [::1] [ali] Deleted image id=56 for college id=21
+[2025-12-09 18:42:49] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 18:42:49] [::1] [ali] Uploaded image for college id=21: img_69385f992b1f07.47594545.jpg
+[2025-12-09 18:42:58] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\21\img_6937fba9d4c961.40973568.jpg
+[2025-12-09 18:42:58] [::1] [ali] Deleted image id=55 for college id=21
+[2025-12-09 18:43:04] [::1] [ali] Updated college id=21: كلية التجارة والاقتصاد (Featured: 0)
+[2025-12-09 18:43:26] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 18:43:26] [::1] [ali] Uploaded image for college id=19: img_69385fbed44ec4.70314411.jpg
+[2025-12-09 18:43:54] [::1] [ali] Updated college id=19: كلية التربية (Featured: 0)
+[2025-12-09 18:43:55] [::1] [ali] Uploaded image for college id=19: img_69385fdaf085d0.48955005.jpg
+[2025-12-09 18:44:02] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\19\img_6937f599c59377.67590274.jpg
+[2025-12-09 18:44:02] [::1] [ali] Deleted image id=32 for college id=19
+[2025-12-09 18:44:05] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\19\img_6937f581cbfb77.23378138.jpg
+[2025-12-09 18:44:05] [::1] [ali] Deleted image id=31 for college id=19
+[2025-12-09 18:44:27] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية (Featured: 0)
+[2025-12-09 18:44:28] [::1] [ali] Uploaded image for college id=23: img_69385ffbec8044.70743026.jpg
+[2025-12-09 18:45:02] [::1] [ali] Updated college id=23: كلية الثروات النفطية والموارد الطبيعية (Featured: 0)
+[2025-12-09 18:45:02] [::1] [ali] Uploaded image for college id=23: img_6938601e2053b7.62931239.jpg
+[2025-12-09 18:45:13] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\23\img_6937f614af4146.52981628.jpg
+[2025-12-09 18:45:13] [::1] [ali] Deleted image id=35 for college id=23
+[2025-12-09 18:45:16] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\23\img_6937f600040fa4.83675033.jpg
+[2025-12-09 18:45:16] [::1] [ali] Deleted image id=34 for college id=23
+[2025-12-09 18:45:48] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات (Featured: 0)
+[2025-12-09 18:45:48] [::1] [ali] Uploaded image for college id=15: img_6938604cabef56.99329664.jpg
+[2025-12-09 18:46:02] [::1] [ali] Updated college id=15: كلية الحاسوب وتكنولوجيا المعلومات (Featured: 0)
+[2025-12-09 18:46:03] [::1] [ali] Uploaded image for college id=15: img_6938605ae7d5a7.12476464.jpg
+[2025-12-09 18:46:10] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\15\img_6937f677e2d2f2.41934615.jpg
+[2025-12-09 18:46:10] [::1] [ali] Deleted image id=37 for college id=15
+[2025-12-09 18:46:13] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\15\img_6937f65fe05289.92261520.jpg
+[2025-12-09 18:46:13] [::1] [ali] Deleted image id=36 for college id=15
+[2025-12-09 18:46:38] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة (Featured: 0)
+[2025-12-09 18:46:38] [::1] [ali] Uploaded image for college id=17: img_6938607edd2d19.28773434.jpg
+[2025-12-09 18:46:44] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\17\img_6937f6bc39e360.74995564.jpg
+[2025-12-09 18:46:44] [::1] [ali] Deleted image id=38 for college id=17
+[2025-12-09 18:47:02] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة (Featured: 0)
+[2025-12-09 18:47:02] [::1] [ali] Uploaded image for college id=17: img_69386096b7cee5.96387654.jpg
+[2025-12-09 18:47:07] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\17\img_6937f6da2cf670.18642959.jpg
+[2025-12-09 18:47:07] [::1] [ali] Deleted image id=39 for college id=17
+[2025-12-09 18:47:13] [::1] [ali] Updated college id=17: كلية الزراعة والاغذية والبيئة (Featured: 0)
+[2025-12-09 18:47:46] [::1] [ali] Updated college id=18: كلية الشريعة والقانون (Featured: 0)
+[2025-12-09 18:47:46] [::1] [ali] Uploaded image for college id=18: img_693860c2b8f821.16419384.jpg
+[2025-12-09 18:47:51] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\18\img_6937f70161d7a6.83032482.jpg
+[2025-12-09 18:47:51] [::1] [ali] Deleted image id=40 for college id=18
+[2025-12-09 18:48:01] [::1] [ali] Updated college id=18: كلية الشريعة والقانون (Featured: 0)
+[2025-12-09 18:48:01] [::1] [ali] Uploaded image for college id=18: img_693860d1427582.04887174.jpg
+[2025-12-09 18:48:13] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\18\img_6937f718d78681.71641800.jpg
+[2025-12-09 18:48:13] [::1] [ali] Deleted image id=41 for college id=18
+[2025-12-09 18:48:15] [::1] [ali] Updated college id=18: كلية الشريعة والقانون (Featured: 0)
+[2025-12-09 18:48:51] [::1] [ali] Updated college id=13: كلية الصيدلة (Featured: 0)
+[2025-12-09 18:48:51] [::1] [ali] Uploaded image for college id=13: img_693861033e1722.07427886.jpg
+[2025-12-09 18:48:59] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\13\img_6937f74855e047.85531628.jpg
+[2025-12-09 18:48:59] [::1] [ali] Deleted image id=42 for college id=13
+[2025-12-09 18:49:16] [::1] [ali] Updated college id=13: كلية الصيدلة (Featured: 0)
+[2025-12-09 18:49:16] [::1] [ali] Uploaded image for college id=13: img_6938611c56b328.13512442.jpg
+[2025-12-09 18:49:22] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\13\img_6937f7669d09a9.24675591.jpg
+[2025-12-09 18:49:22] [::1] [ali] Deleted image id=43 for college id=13
+[2025-12-09 18:49:57] [::1] [ali] Updated college id=24: كلية الطب البيطري (Featured: 0)
+[2025-12-09 18:49:57] [::1] [ali] Uploaded image for college id=24: img_69386145237c41.16937113.jpg
+[2025-12-09 18:50:22] [::1] [ali] Updated college id=24: كلية الطب البيطري (Featured: 0)
+[2025-12-09 18:50:22] [::1] [ali] Uploaded image for college id=24: img_6938615ec4a2a7.23131222.jpg
+[2025-12-09 18:50:27] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\24\img_6937f7cd251ba6.31783741.jpg
+[2025-12-09 18:50:27] [::1] [ali] Deleted image id=45 for college id=24
+[2025-12-09 18:50:29] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\24\img_6937f7966ef1f3.19944088.jpg
+[2025-12-09 18:50:29] [::1] [ali] Deleted image id=44 for college id=24
+[2025-12-09 18:51:29] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 18:51:29] [::1] [ali] Uploaded image for college id=16: img_693861a10e8de6.42088680.jpg
+[2025-12-09 18:52:07] [::1] [ali] Updated college id=16: كلية العلوم (Featured: 0)
+[2025-12-09 18:52:07] [::1] [ali] Uploaded image for college id=16: img_693861c72d6be5.50837529.jpg
+[2025-12-09 18:52:11] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\16\img_6937f8ff8e17d4.72979762.jpg
+[2025-12-09 18:52:11] [::1] [ali] Deleted image id=47 for college id=16
+[2025-12-09 18:52:14] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\16\img_6937f8ea334820.91679251.jpg
+[2025-12-09 18:52:14] [::1] [ali] Deleted image id=46 for college id=16
+[2025-12-09 18:52:53] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\20\img_69385ce2cdcef9.13789212.jpg
+[2025-12-09 18:52:53] [::1] [ali] Deleted image id=61 for college id=20
+[2025-12-09 18:53:18] [::1] [ali] Updated college id=20: كلية اللغات (Featured: 0)
+[2025-12-09 18:53:18] [::1] [ali] Uploaded image for college id=20: img_6938620e4d1d24.55515636.jpg
+[2025-12-09 18:53:47] [::1] [ali] Updated college id=14: كلية الهندسة (Featured: 0)
+[2025-12-09 18:53:47] [::1] [ali] Uploaded image for college id=14: img_6938622b6c0352.60528351.jpg
+[2025-12-09 18:53:52] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\14\img_6937f987529244.29347594.jpg
+[2025-12-09 18:53:52] [::1] [ali] Deleted image id=49 for college id=14
+[2025-12-09 18:54:12] [::1] [ali] Updated college id=14: كلية الهندسة (Featured: 0)
+[2025-12-09 18:54:12] [::1] [ali] Uploaded image for college id=14: img_69386244d41434.15266194.jpg
+[2025-12-09 18:54:18] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\14\img_6937f99b06f6a2.53089652.jpg
+[2025-12-09 18:54:18] [::1] [ali] Deleted image id=50 for college id=14
+[2025-12-09 18:54:58] [::1] [ali] Updated college id=12: كلية طب الاسنان (Featured: 0)
+[2025-12-09 18:54:59] [::1] [ali] Uploaded image for college id=12: img_69386272e91ee6.45544071.jpg
+[2025-12-09 18:54:59] [::1] [ali] Uploaded image for college id=12: img_693862730286f0.54998042.jpg
+[2025-12-09 18:55:04] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\12\img_6937f9ced642a8.42777118.jpg
+[2025-12-09 18:55:04] [::1] [ali] Deleted image id=51 for college id=12
+[2025-12-09 18:55:07] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\12\img_6937f9cedcb3f5.85152015.jpg
+[2025-12-09 18:55:07] [::1] [ali] Deleted image id=52 for college id=12
+[2025-12-09 18:55:27] [::1] [ali] Updated college id=12: كلية طب الاسنان (Featured: 0)
+[2025-12-09 18:55:27] [::1] [ali] Uploaded image for college id=12: img_6938628f51ac16.11286795.jpg
+[2025-12-09 18:55:31] [::1] [ali] Deleted college image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\colleges\12\img_6937f9de3a0503.08896093.jpg
+[2025-12-09 18:55:31] [::1] [ali] Deleted image id=53 for college id=12
+[2025-12-09 18:56:51] [::1] [ali] Updated university id=22: جامعة الأندلس (Featured: 1)
+[2025-12-09 18:56:51] [::1] [ali] Uploaded image for university id=22: img_693862e3921754.86290525.jpg
+[2025-12-09 18:56:51] [::1] [ali] Uploaded image for university id=22: img_693862e3aedf68.93873778.png
+[2025-12-09 18:56:51] [::1] [ali] Uploaded image for university id=22: img_693862e3d97660.16070968.png
+[2025-12-09 18:56:56] [::1] [ali] Deleted university image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\universities\22\img_6937f3a3b0f409.61625834.jpg
+[2025-12-09 18:56:56] [::1] [ali] Deleted image id=26 for university id=22
+[2025-12-09 18:57:00] [::1] [ali] Deleted university image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\universities\22\img_6937f3a3d40667.36915057.png
+[2025-12-09 18:57:00] [::1] [ali] Deleted image id=27 for university id=22
+[2025-12-09 18:57:02] [::1] [ali] Deleted university image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\universities\22\img_6937f3a3eefbf8.37080037.png
+[2025-12-09 18:57:02] [::1] [ali] Deleted image id=28 for university id=22
+[2025-12-09 18:57:37] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 18:57:37] [::1] [ali] Uploaded image for university id=21: img_69386311466e27.63841376.jpg
+[2025-12-09 18:57:49] [::1] [ali] Updated university id=21: جامعة صنعاء (Featured: 1)
+[2025-12-09 18:57:49] [::1] [ali] Uploaded image for university id=21: img_6938631d121987.22762305.jpg
+[2025-12-09 18:57:54] [::1] [ali] Deleted university image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\universities\21\img_6937f4197d2134.19208572.jpg
+[2025-12-09 18:57:54] [::1] [ali] Deleted image id=30 for university id=21
+[2025-12-09 18:57:58] [::1] [ali] Deleted university image: C:\xampp\htdocs\_______ 1 ____ _\UniversitiesProject\uploads\universities\21\img_6937f3f87f52b2.47611912.jpg
+[2025-12-09 18:57:58] [::1] [ali] Deleted image id=29 for university id=21

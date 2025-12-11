@@ -1,0 +1,975 @@
+/* ===================================
+   صفحة تفاصيل التخصص - تصميم متكامل
+   =================================== */
+
+/* رأس الصفحة */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* تغير لون السكشن الاول ****************************************/
+    color: white;/* تغيير لون اسم التخصص ومدة الدراسةوحالة التخصص*************************************************************/
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb i {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.breadcrumb span {
+    color: white;
+    font-weight: 600;
+}
+
+.specialization-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.specialization-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.specialization-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);/* تغيير لون حول ايقونة التخصص**************************************************/
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;/* تغيير لون ايقونة التخصص في السكشن الاول********************************************************/
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.specialization-details h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.specialization-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.university-type {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.university-type.government {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;/* تغيير لون نوع التخصص الححكومي*******************************************************************/
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.university-type.private {
+    background: rgba(59, 130, 246, 0.2);
+    color: #eaecef;/* تغيير لون نوعية التخصص اهلي******************************************************/
+    border: 1px solid rgba(188, 195, 206, 0.3);
+}
+
+.university-type.independent {
+    background: rgba(168, 85, 247, 0.2);
+    color: #55f775;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.specialization-degree,
+.specialization-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);/* تغيير لون البكالوريوس والسنوات في السكشن الاول****************************************/
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.specialization-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    padding: 3rem 0;
+    background: #f8fcf8;/* تغيير لون الخلفية في السكشن الثاني*************************************************************/
+}
+
+.content-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3b1e;/* تغيير لون معلومات التخصص***************************************************************************/
+    margin: 0 0 0.5rem 0;
+}
+
+.section-header p {
+    color: #648b7f;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* معلومات التخصص */
+.specialization-section {
+    background: white;/* تغيير لون البطاقة الخارجية لمعلومات التخصص*****************************************************/
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.specialization-card {
+    background: rgb(255, 255, 255);/* تغيير لون البطاقة الداخلية لمعلومات التخصص*********************************************/
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.specialization-content {
+    padding: 0;
+}
+
+/* تصميم موحد لوصف التخصص وشروط القبول والمتطلبات السابقة */
+.description,
+.admission-section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f9fcf8 0%, #f1f5f9 100%);/* تغيير لون بطاقة شروط القبول ووصف التخصص****************************/
+    border-radius: 15px;
+    border: 1px solid #f0ede2;
+    border-right: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.description:hover,
+.admission-section:hover {
+    border-color: #eac066;/* تغيير لون اطار بطاقة شروط القبول عند وضع الموشر عليها******************************************************/
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.description h3,
+.admission-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3b1e2d;/* تغيير لون جملة شروط القبول*************************************************************************/
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.description h3 i,
+.admission-section h3 i {
+    color: #667eea;/* تغيير لون ايقونة علامة الصح جوار جملة شروط القبول********************************************************/
+    background: rgba(18, 231, 100, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.description p {
+    color: #476949;/* تغيير لون النص الفرعي اسفل وصف التخصص***********************************************************************/
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* تنسيق القوائم في شروط القبول والمتطلبات */
+.admission-requirements,
+.admission-prerequisites {
+    color: #4f6947;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.admission-requirements ul,
+.admission-prerequisites ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admission-requirements li,
+.admission-prerequisites li {
+    position: relative;
+    padding: 1rem 0 1rem 3.5rem;
+    color: #516947;/* تغيير لون شروط القبول مثل 78% المجموع في الثانوية*********************************************************/
+    line-height: 1.7;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+}
+
+.admission-requirements li:last-child,
+.admission-prerequisites li:last-child {
+    border-bottom: none;
+}
+
+.admission-requirements li::before,
+.admission-prerequisites li::before {
+    content: "✓";
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+    color: #22c55e;/* تغيير لون علامة الصح امام شروط القبول******************************************************************/
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: rgba(34, 197, 94, 0.1);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #22c55e;
+}
+
+.admission-requirements li:hover,
+.admission-prerequisites li:hover {
+    background: rgba(255, 255, 255, 0.5);/*  تغيير لون مربع النص اسفل شروط القبول عند وضع الموشر عليها****************************/
+    border-radius: 8px;
+    padding-left: 3.5rem;
+    margin: 0 -0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* تفاصيل التخصص - البطاقات الصغيرة */
+.specialization-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #fcf8f8;/* تغيير لون بطايق وصف التخصص مثل الكلية الجامعة الموقه وغيرها***************************************/
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    min-height: 80px;
+}
+
+.detail-item:hover {
+    background: #f9f1f3;/*تغيير لون بطايق وصف التخصص مثل الكلية الجامعة الموقع عند وضع الموشر عليها***************************************/
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.detail-item i {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* تغيير لون المربع المحيط بايقونات وصف التخصص*****************/
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;/*تغيير لون الايقونات التابعة لوصف التخصص********************************************************************* */
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover i {
+    transform: scale(1.1);
+}
+
+.detail-item div {
+    flex: 1;
+}
+
+.detail-item strong {
+    display: block;
+    color: #3b1e26;/* تغيير لون النص اسفل وصف التخصص مثل اسم الجامعة والتخصص والكلية والموقع*************************************/
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.detail-item span {
+    color: #8b7864;/* تغيير لون النص الفرعي اسفل اسم الجامعة والكلية والموقع************************************************/
+    font-size: 0.9rem;
+}
+
+.status-available {
+    color: #22c55e !important;
+    font-weight: 600;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* معلومات الكلية */
+.college-section {
+    background: white;/* تغيير لون البطاقة الخارجيةلمعلومات الكلية والجامعة****************************************/
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.college-card {
+    background: #f8fcf8;/* تغيير لون البطاقة الوسطى لمعلومات الكلية والجامعة********************************************/
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.college-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.college-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.college-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* *********************تغيير لون المربع المحيط بايقونة اسم الكلية*/
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;/* تغيير لون ايقونة اسم الكلية في سكشن معلومات الكلية والجامعة************************************************/
+    font-size: 1.2rem;
+}
+
+.college-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e293b;/* تغيير اسم الكلية في سكشن معلومات الكلية والجامعة*****************************************************/
+    margin: 0;
+}
+
+.college-type.independent {
+    background: rgba(168, 85, 247, 0.1);
+    color: #1be86d;/* تغيير لون نوع الكلية المستقلة*******************************************************/
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.college-content p {
+    color: #69474f;/* تغيير لون الخط الفرعي اسفل عن الكلية******************************************/
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.05rem;
+}
+
+.contact-details {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgb(255, 255, 255);/* تغيير لون البطاقة الخارجية لمعلومات التواصل*****************************************/
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-details h4 {
+    margin: 0 0 1rem 0;
+    color: #1e3b21;/* تغيير لون الخط الرئيسي المسمى معلومات التواصل*******************************************************/
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-details h4 i {
+    color: #667eea;/* تغيير لون ايقونة معلومات التواصل************************************************/
+    background: rgba(102, 126, 234, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #fcf8fb;/* تغيير لون بطاقةهاتف الكلية الموقعوالبريد الالكتروني ورابط التنسيق**************************************/
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #f1f5f9;/*   تغيير لون بطاقةهاتف الكلية الموقعوالبريد الالكتروني ورابط التنسيق عند وضع الموشر عليها**************************************/
+    transform: translateY(-1px);
+}
+
+.contact-item i {
+    color: #667eea;/* تغيير لون ايقونات الموقع والبريد الالكتروني وهاتف الكلية ورابط التنسيق***************************/
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.contact-item span,
+.contact-item a {
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.contact-item a:hover {
+    color: #667eea;
+}
+
+.university-info {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+}
+
+.university-info h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.university-info h4 i {
+    color: white;
+    opacity: 0.9;
+}
+
+.university-info p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.college-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* تغيير لون زر عرض الكلية************************************/
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;/* تغيير لون خط عرض الجامعة في الزر**********************************************************/
+    border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* التصميم المتجاوب المحسن */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .specialization-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .specialization-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .specialization-details h1 {
+        font-size: 2rem;
+    }
+    
+    .specialization-meta {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .specialization-stats {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .specialization-details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .college-actions {
+        flex-direction: column;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .specialization-section,
+    .college-section {
+        padding: 1.5rem;
+    }
+    
+    .description,
+    .admission-section {
+        padding: 1.5rem;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .detail-item i {
+        align-self: center;
+    }
+    
+    .breadcrumb {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    
+    .admission-requirements li,
+    .admission-prerequisites li {
+        padding: 0.75rem 0 0.75rem 2.5rem;
+    }
+    
+    .admission-requirements li::before,
+    .admission-prerequisites li::before {
+        left: 0.75rem;
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 1.5rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .specialization-details h1 {
+        font-size: 1.75rem;
+    }
+    
+    .specialization-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .specialization-section,
+    .college-section {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+    
+    .specialization-details-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .specialization-meta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        min-width: 120px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .college-actions {
+        gap: 0.5rem;
+    }
+    
+    .description h3,
+    .admission-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .admission-requirements li,
+    .admission-prerequisites li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .description,
+    .admission-section {
+        padding: 1.25rem;
+    }
+}
+
+/* إصلاحات إضافية للتوافق */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* تحسينات للعرض على الشاشات الكبيرة */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .specialization-details-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+/* تحسينات للطباعة */
+@media print {
+    .page-header {
+        background: #667eea !important;
+        color: black !important;
+        -webkit-print-color-adjus:exact;
+    }
+    
+    .btn,
+    .college-actions {
+        display: none !important;
+    }
+    
+    .specialization-card,
+    .college-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .description,
+    .admission-section {
+        border: 1px solid #ccc !important;
+        border-right: 4px solid #667eea !important;
+    }
+}
+
+/* تحسينات الأداء */
+.optimize-performance {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* تحسينات للوضع الداكن */
+@media (prefers-color-scheme: dark) {
+    .specialization-section,
+    .college-section {
+        background: #1e293b;
+        color: #f1f5f9;
+    }
+    
+    .detail-item {
+        background: #334155;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    .description,
+    .admission-section {
+        background: #334155;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    .description h3,
+    .admission-section h3 {
+        color: #f1f5f9;
+        border-bottom-color: #475569;
+    }
+    
+    .description p,
+    .admission-requirements li,
+    .admission-prerequisites li {
+        color: #cbd5e1;
+    }
+    
+    .detail-item strong {
+        color: #f1f5f9;
+    }
+    
+    .detail-item span {
+        color: #cbd5e1;
+    }
+    /* إضافات خاصة للكليات المستقلة */
+.college-indicator {
+    display: block;
+    color: #a855f7;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.college-title {
+    flex: 1;
+}
+
+.college-type.affiliated {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.college-description {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.college-description h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.college-description h4 i {
+    color: #667eea;
+}
+
+.contact-details .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details .contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-details .contact-item i {
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.contact-details .contact-item div {
+    flex: 1;
+}
+
+.contact-details .contact-item strong {
+    display: block;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.contact-details .contact-item span,
+.contact-details .contact-item a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.contact-details .contact-item a:hover {
+    color: #667eea;
+}
+
+/* تحسينات للعرض على الجوال */
+@media (max-width: 768px) {
+    .college-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .college-title {
+        text-align: center;
+    }
+    
+    .contact-details .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contact-details .contact-item i {
+        align-self: center;
+    }
+}
+
+/* تحسينات خاصة للكليات المستقلة */
+.independent-college .specialization-meta .university-type.independent {
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.independent-college .college-card {
+    border-left: 4px solid #a855f7;
+}
+
+.affiliated-college .college-card {
+    border-left: 4px solid #3b82f6;
+}
+}
